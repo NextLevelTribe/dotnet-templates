@@ -1,0 +1,30 @@
+﻿<Project Sdk="MSTest.Sdk/3.8.3">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <!--
+      Displays error on console in addition to the log file. Note that this feature comes with a performance impact.
+      For more information, visit https://learn.microsoft.com/dotnet/core/testing/unit-testing-platform-integration-dotnet-test#show-failure-per-test
+      -->
+    <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ItemTemplates\Snapshots\**" />
+    <EmbeddedResource Remove="ItemTemplates\Snapshots\**" />
+    <None Remove="ItemTemplates\Snapshots\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.TemplateEngine.Authoring.TemplateVerifier" Version="9.0.203" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SolutionTemplates\" />
+    <Folder Include="ProjectTemplates\" />
+  </ItemGroup>
+
+</Project>

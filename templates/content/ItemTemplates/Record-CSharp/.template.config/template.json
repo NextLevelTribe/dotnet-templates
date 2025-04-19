@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Next Level Tribe",
+  "description": "Creates a new C# record.",
+  "classifications": [ "Common" ],
+  "groupIdentity": "NextLevelTribe.Record",
+  "precedence": "10",
+  "identity": "NextLevelTribe.Record.CSharp",
+  "name": "Next Level Tribe: Record",
+  "shortName": "nlt-record",
+  "sourceName": "Record1",
+  "preferDefaultName": true,
+  "defaultName": "Record1",
+  "primaryOutputs": [
+    {
+      "path": "Record1.cs"
+    }
+  ],
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "symbols": {
+    "DefaultNamespace": {
+      "type": "bind",
+      "binding": "msbuild:RootNamespace",
+      "replaces": "Company.ClassLibrary1",
+      "defaultValue": "Company.ClassLibrary1"
+    },
+    "Type": {
+      "type": "parameter",
+      "description": "The target type for the record.",
+      "datatype": "choice",
+      "enableQuotelessLiterals": true,
+      "choices": [
+        {
+          "choice": "class",
+          "description": "Creates a record class."
+        },
+        {
+          "choice": "struct",
+          "description": "Creates a record struct."
+        }
+      ],
+      "defaultValue": "class"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Next Level Tribe",
+  "description": "Creates a new MSTest test class.",
+  "classifications": [ "Test", "MSTest" ],
+  "groupIdentity": "NextLevelTribe.Test.MSTest.TestClass",
+  "precedence": "10",
+  "identity": "NextLevelTribe.Test.MSTest.TestClass.CSharp",
+  "name": "Next Level Tribe: MSTest Test Class",
+  "shortName": "nlt-mstest-class",
+  "sourceName": "Test1",
+  "preferDefaultName": true,
+  "defaultName": "Test1",
+  "primaryOutputs": [
+    {
+      "path": "Test1.cs"
+    }
+  ],
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "symbols": {
+    "DefaultNamespace": {
+      "type": "bind",
+      "binding": "msbuild:RootNamespace",
+      "replaces": "Company.TestProject1",
+      "defaultValue": "Company.TestProject1"
+    },
+    "ImplicitUsings": {
+      "type": "bind",
+      "binding": "msbuild:ImplicitUsings",
+      "datatype": "string",
+      "defaultValue": "disable"
+    }
+  }
+}

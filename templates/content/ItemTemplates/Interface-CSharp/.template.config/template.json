@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Next Level Tribe",
+  "description": "Creates a new C# interface.",
+  "classifications": [ "Common" ],
+  "groupIdentity": "NextLevelTribe.Interface",
+  "precedence": "10",
+  "identity": "NextLevelTribe.Interface.CSharp",
+  "name": "Next Level Tribe: Interface",
+  "shortName": "nlt-interface",
+  "sourceName": "Interface1",
+  "preferDefaultName": true,
+  "defaultName": "Interface1",
+  "primaryOutputs": [
+    {
+      "path": "Interface1.cs"
+    }
+  ],
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "symbols": {
+    "DefaultNamespace": {
+      "type": "bind",
+      "binding": "msbuild:RootNamespace",
+      "replaces": "Company.ClassLibrary1",
+      "defaultValue": "Company.ClassLibrary1"
+    }
+  }
+}
