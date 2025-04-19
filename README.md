@@ -2,14 +2,14 @@
 Item, Project, and Solution teamples including Clean Architecture.
 
 ## Solution structure
-- .config: Desired State Configuration (DSC) scripts for the development environment.
-- templates: The template package project.
-- templates\content
-  - ItemTemplates: Class, Enum, Interface, Record, and Struct templates.
-  - ProjectTemplates: Use Case templates for Clean Architecture.
-  - SolutionTemplates: Clean Architecture solution template.
-- tests
-  - Template.Tests: Tests for the templates.
+- `.config`: Desired State Configuration (DSC) scripts for the development environment.
+- `templates`: The template package project.
+- `templates\content`
+  - `ItemTemplates`: Class, Enum, Interface, Record, and Struct templates.
+  - `ProjectTemplates`: Use Case templates for Clean Architecture.
+  - `SolutionTemplates`: Clean Architecture solution template.
+- `tests`
+  - `Template.Tests`: Tests for the templates.
 
 ## Setting up the development environment
 Step in the `.config` directory.
