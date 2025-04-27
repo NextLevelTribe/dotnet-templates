@@ -1,9 +1,9 @@
 # .NET Templates
-Item, Project, and Solution teamples including Clean Architecture.
+Item, Project, and Solution template including Clean Architecture.
 
 ## Solution structure
-- `.config`: Desired State Configuration (DSC) scripts for the development environment.
-- `templates`: The template package project.
+- `.config`: Desired State Configuration (DSC) scripts to setup the development environment.
+- `templates`: The project of the template package.
 - `templates\content`
   - `ItemTemplates`: Class, Enum, Interface, Record, and Struct templates.
   - `ProjectTemplates`: Use Case templates for Clean Architecture.
@@ -12,12 +12,15 @@ Item, Project, and Solution teamples including Clean Architecture.
   - `Template.Tests`: Tests for the templates.
 
 ## Setting up the development environment
-Step in the `.config` directory.
 
 ### Windows
-Run the `Configure-Desired-State.ps1` file which will use the [WinGet](https://learn.microsoft.com/windows/package-manager/winget/) to install the required tools and set up the development environment.
+Run the `Configure-Desired-State.ps1` file in the `.config` directory, which will use the [WinGet](https://learn.microsoft.com/windows/package-manager/winget/) package manager to install the required tools and set up the development environment.
 
-## Resources for teample development
+```powershell
+.\.config\Configure-Desired-State.ps1
+```
+
+## Resources for template development
 
 Tutorials
 - [Create templates](https://learn.microsoft.com/en-us/dotnet/core/tutorials/cli-templates-create-item-template)

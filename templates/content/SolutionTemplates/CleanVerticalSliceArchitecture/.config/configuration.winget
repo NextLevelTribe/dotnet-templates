@@ -1,0 +1,98 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+
+##########################################################################################################
+# This configuration will install the tools necessary to start developing on this project on Windows.    #
+#                                                                                                        #
+# This will:                                                                                             #
+#     * Install Git                                                                                      #
+#     * Install PowerShell                                                                               #
+#     * Install .NET SDK                                                                                 #
+#     * Install Visual Studio Code and the following extensions                                          #
+#         * EditorConfig                                                                                 #
+#         * PowerShell                                                                                   #
+#         * C# Dev Kit                                                                                   #
+#     * Install Managed Desktop Workload to Visual Studio Community 2022                                 #
+#                                                                                                        #
+##########################################################################################################
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: '10.0.22000'
+  resources:
+  ################
+  # Install apps #
+  ################
+    # Section: Git
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Git.Git
+      directives:
+        description: Install Git.Git # Although the user probably already has git installed, it's possible that they don't.
+        securityContext: elevated
+        allowPrerelease: true
+      settings:
+        id: Git.Git
+        source: winget
+    # Section: PowerShell
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.PowerShell
+      directives:
+        description: Install Microsoft.PowerShell
+        securityContext: elevated
+      settings:
+        id: Microsoft.PowerShell
+        source: winget
+    # Section: .NET SDK
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.DotNet.SDK
+      directives:
+        description: Install Microsoft.DotNet.SDK
+        securityContext: elevated
+        allowPrerelease: true
+      settings:
+        id: Microsoft.DotNet.SDK.9
+        source: winget
+    # Section: VSCode
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.VisualStudioCode
+      dependsOn:
+        - Microsoft.DotNet.SDK
+      directives:
+        description: Install Microsoft.VisualStudioCode
+      settings:
+        id: Microsoft.VisualStudioCode
+        source: winget
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      id: VSCode.EditorConfig
+      dependsOn:
+        - Microsoft.VisualStudioCode
+      directives:
+        description: Install EditorConfig extension for VSCode
+        allowPrerelease: true
+      settings:
+        Name: editorconfig.editorconfig
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      id: VSCode.PowerShell
+      dependsOn:
+        - Microsoft.VisualStudioCode
+      directives:
+        description: Install PowerShell extension for VSCode
+        allowPrerelease: true
+      settings:
+        Name: ms-vscode.powershell
+        Exist: true
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      id: VSCode.CSharpDevKit
+      dependsOn:
+        - Microsoft.VisualStudioCode
+      directives:
+        description: Install C# Dev Kit extension for VSCode
+        allowPrerelease: true
+      settings:
+        Name: ms-dotnettools.csdevkit
+        Exist: true
