@@ -2,15 +2,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanVerticalSliceArchitecture.AppHost", "CleanVerticalSliceArchitecture.AppHost\CleanVerticalSliceArchitecture.AppHost.csproj", "{6362845C-03C8-4AA0-AB1B-916485B0E31D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanVerticalSliceArchitecture.AppHost", "src\CleanVerticalSliceArchitecture.AppHost\CleanVerticalSliceArchitecture.AppHost.csproj", "{6362845C-03C8-4AA0-AB1B-916485B0E31D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanVerticalSliceArchitecture.ServiceDefaults", "CleanVerticalSliceArchitecture.ServiceDefaults\CleanVerticalSliceArchitecture.ServiceDefaults.csproj", "{043316F4-B2CB-6A2E-C0F1-01F18CD2CCDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanVerticalSliceArchitecture.ServiceDefaults", "src\CleanVerticalSliceArchitecture.ServiceDefaults\CleanVerticalSliceArchitecture.ServiceDefaults.csproj", "{043316F4-B2CB-6A2E-C0F1-01F18CD2CCDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanVerticalSliceArchitecture.ApiService", "CleanVerticalSliceArchitecture.ApiService\CleanVerticalSliceArchitecture.ApiService.csproj", "{1A9304E8-7920-4054-C06C-CBF6990382CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanVerticalSliceArchitecture.ApiService", "src\CleanVerticalSliceArchitecture.ApiService\CleanVerticalSliceArchitecture.ApiService.csproj", "{1A9304E8-7920-4054-C06C-CBF6990382CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanVerticalSliceArchitecture.Web", "CleanVerticalSliceArchitecture.Web\CleanVerticalSliceArchitecture.Web.csproj", "{2C23BC70-57DD-270E-0FC3-45511E48600E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanVerticalSliceArchitecture.Web", "src\CleanVerticalSliceArchitecture.Web\CleanVerticalSliceArchitecture.Web.csproj", "{2C23BC70-57DD-270E-0FC3-45511E48600E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanVerticalSliceArchitecture.Tests", "CleanVerticalSliceArchitecture.Tests\CleanVerticalSliceArchitecture.Tests.csproj", "{E0C65AAA-E8D0-6FDA-14C1-7EDB841E3193}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanVerticalSliceArchitecture.Tests", "tests\CleanVerticalSliceArchitecture.Tests\CleanVerticalSliceArchitecture.Tests.csproj", "{E0C65AAA-E8D0-6FDA-14C1-7EDB841E3193}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F2318CF9-D793-437F-B8F5-47C6952EBE54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +50,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6362845C-03C8-4AA0-AB1B-916485B0E31D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{043316F4-B2CB-6A2E-C0F1-01F18CD2CCDE} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{1A9304E8-7920-4054-C06C-CBF6990382CB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{2C23BC70-57DD-270E-0FC3-45511E48600E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{E0C65AAA-E8D0-6FDA-14C1-7EDB841E3193} = {F2318CF9-D793-437F-B8F5-47C6952EBE54}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AE8E1438-9AD8-4B14-A9FC-1C7AE6855803}
