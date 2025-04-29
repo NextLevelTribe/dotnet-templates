@@ -12,16 +12,17 @@ Item, Project, and Solution template including Clean Architecture.
   - `Template.Tests`: Tests for the templates.
 
 ## Setting up the development environment
+The `.config` contains the Desired State Configuration (DSC) scripts to setup the development environment.
 
 ### Windows
-Run the `Configure-Desired-State.ps1` file in the `.config` directory, which will use the [WinGet](https://learn.microsoft.com/windows/package-manager/winget/) package manager to install the required tools and set up the development environment.
+Run the `Configure-Desired-State.ps1` file in the `.config\windows` directory, which will use the [WinGet](https://learn.microsoft.com/windows/package-manager/winget/) package manager to install the required tools and set up the development environment.
 
 ```powershell
-.\.config\Configure-Desired-State.ps1
+cd .\.config\windows\
+.\Configure-Desired-State.ps1
 ```
 
 ## Resources for template development
-
 Tutorials
 - [Create templates](https://learn.microsoft.com/en-us/dotnet/core/tutorials/cli-templates-create-item-template)
 - [How to create custom templates](https://learn.microsoft.com/en-us/dotnet/core/tools/custom-templates)

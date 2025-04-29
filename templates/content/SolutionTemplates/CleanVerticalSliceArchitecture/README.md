@@ -12,13 +12,14 @@ The project was generated using the [TemplatePackageId](TemplateRepositoryUrl) v
   - `CleanVerticalSliceArchitecture.Tests`: Tests for the templates.
 
 ## Setting up the development environment
-The `.config` contains the directory the Desired State Configuration (DSC) scripts to setup the development environment.
+The `.config` contains the Desired State Configuration (DSC) scripts to setup the development environment.
 
 ### Windows
-We use [WinGet](https://learn.microsoft.com/windows/package-manager/winget/) package manager to install the required tools and set up the development environment.
+Run the `Configure-Desired-State.ps1` file in the `.config\windows` directory, which will use the [WinGet](https://learn.microsoft.com/windows/package-manager/winget/) package manager to install the required tools and set up the development environment.
 
 ```powershell
-winget configure .\.config\configuration.winget
+cd .\.config\windows\
+.\Configure-Desired-State.ps1
 ```
 
 ## Build
