@@ -5,12 +5,10 @@
 #                                                                                                        #
 # This will:                                                                                             #
 #     * Install Git                                                                                      #
-#     * Install PowerShell                                                                               #
 #     * Install .NET SDK                                                                                 #
-#     * Install Visual Studio Code and the following extensions                                          #
-#         * EditorConfig                                                                                 #
-#         * PowerShell                                                                                   #
-#         * C# Dev Kit                                                                                   #
+#     * Install Visual Studio Community and the following Workloads and Components                       #
+#         * ASP.NET and web development                                                                  #
+#         * .NET Aspire SDK                                                                              #
 #                                                                                                        #
 ##########################################################################################################
 properties:
@@ -36,15 +34,6 @@ properties:
       settings:
         id: Git.Git
         source: winget
-    # Section: PowerShell
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Microsoft.PowerShell
-      directives:
-        description: Install Microsoft.PowerShell
-        securityContext: elevated
-      settings:
-        id: Microsoft.PowerShell
-        source: winget
     # Section: .NET SDK
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Microsoft.DotNet.SDK
@@ -55,43 +44,27 @@ properties:
       settings:
         id: Microsoft.DotNet.SDK.9
         source: winget
-    # Section: VSCode
+    # Section: Visual Studio
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Microsoft.VisualStudioCode
-      dependsOn:
-        - Microsoft.DotNet.SDK
+      id: Microsoft.VisualStudio.2022.Community
       directives:
-        description: Install Microsoft.VisualStudioCode
+        description: Install Microsoft.VisualStudio.2022.Community
+        securityContext: elevated
       settings:
-        id: Microsoft.VisualStudioCode
+        id: Microsoft.VisualStudio.2022.Community
         source: winget
-    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
-      id: VSCode.EditorConfig
+    - resource: Microsoft.VisualStudio.DSC/VSComponents
+      id: VisualStudio.Components
       dependsOn:
-        - Microsoft.VisualStudioCode
+        - Microsoft.VisualStudio.2022.Community
       directives:
-        description: Install EditorConfig extension for VSCode
+        description: Install Visual Studio Workloads
         allowPrerelease: true
+        securityContext: elevated
       settings:
-        Name: editorconfig.editorconfig
-        Exist: true
-    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
-      id: VSCode.PowerShell
-      dependsOn:
-        - Microsoft.VisualStudioCode
-      directives:
-        description: Install PowerShell extension for VSCode
-        allowPrerelease: true
-      settings:
-        Name: ms-vscode.powershell
-        Exist: true
-    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
-      id: VSCode.CSharpDevKit
-      dependsOn:
-        - Microsoft.VisualStudioCode
-      directives:
-        description: Install C# Dev Kit extension for VSCode
-        allowPrerelease: true
-      settings:
-        Name: ms-dotnettools.csdevkit
-        Exist: true
+        productId: Microsoft.VisualStudio.Product.Community
+        channelId: VisualStudio.17.Release
+        components:
+          - Microsoft.VisualStudio.Workload.NetWeb
+          - aspire
+        includeRecommended: false
