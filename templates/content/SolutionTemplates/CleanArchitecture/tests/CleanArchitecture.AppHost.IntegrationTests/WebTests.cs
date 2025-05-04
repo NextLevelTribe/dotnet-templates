@@ -3,7 +3,7 @@ using Aspire.Hosting;
 namespace CleanArchitecture.AppHost.IntegrationTests;
 
 [TestClass]
-public class WebTests
+public sealed class WebTests
 {
     [TestMethod]
     public async Task GetWebResourceRoot_ReturnsOkStatusCode()
