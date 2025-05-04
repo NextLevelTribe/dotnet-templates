@@ -12,8 +12,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanVerticalSliceArchitecture.ApiService\CleanVerticalSliceArchitecture.ApiService.csproj" />
-    <ProjectReference Include="..\CleanVerticalSliceArchitecture.Web\CleanVerticalSliceArchitecture.Web.csproj" />
+    <ProjectReference Include="..\CleanArchitecture.ApiService\CleanArchitecture.ApiService.csproj" />
+    <ProjectReference Include="..\CleanArchitecture.Web\CleanArchitecture.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>

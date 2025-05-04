@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanVerticalSliceArchitecture.ServiceDefaults\CleanVerticalSliceArchitecture.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\CleanArchitecture.ServiceDefaults\CleanArchitecture.ServiceDefaults.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,4 @@
-namespace CleanVerticalSliceArchitecture.Tests;
+namespace CleanArchitecture.Tests;
 
 [TestClass]
 public class WebTests
@@ -7,7 +7,7 @@ public class WebTests
     public async Task GetWebResourceRootReturnsOkStatusCode()
     {
         // Arrange
-        var appHost = await DistributedApplicationTestingBuilder.CreateAsync<Projects.CleanVerticalSliceArchitecture_AppHost>();
+        var appHost = await DistributedApplicationTestingBuilder.CreateAsync<Projects.CleanArchitecture_AppHost>();
         appHost.Services.ConfigureHttpClientDefaults(clientBuilder =>
         {
             clientBuilder.AddStandardResilienceHandler();

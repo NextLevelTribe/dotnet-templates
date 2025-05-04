@@ -1,4 +1,4 @@
-namespace CleanVerticalSliceArchitecture.Web;
+namespace CleanArchitecture.Web;
 
 public class WeatherApiClient(HttpClient httpClient)
 {

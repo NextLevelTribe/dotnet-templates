@@ -6,9 +6,9 @@ internal class Program
 
         var cache = builder.AddRedis("cache");
 
-        var apiService = builder.AddProject<Projects.CleanVerticalSliceArchitecture_ApiService>("apiservice");
+        var apiService = builder.AddProject<Projects.CleanArchitecture_ApiService>("apiservice");
 
-        builder.AddProject<Projects.CleanVerticalSliceArchitecture_Web>("webfrontend")
+        builder.AddProject<Projects.CleanArchitecture_Web>("webfrontend")
             .WithExternalHttpEndpoints()
             .WithReference(cache)
             .WaitFor(cache)

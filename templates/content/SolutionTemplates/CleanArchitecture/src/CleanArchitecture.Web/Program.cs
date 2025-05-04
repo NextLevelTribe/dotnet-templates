@@ -1,5 +1,5 @@
-using CleanVerticalSliceArchitecture.Web;
-using CleanVerticalSliceArchitecture.Web.Components;
+using CleanArchitecture.Web;
+using CleanArchitecture.Web.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
