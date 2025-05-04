@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.AppHost", "src\CleanArchitecture.AppHost\CleanArchitecture.AppHost.csproj", "{6362845C-03C8-4AA0-AB1B-916485B0E31D}"
 EndProject
@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.ApiServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Web", "src\CleanArchitecture.Web\CleanArchitecture.Web.csproj", "{2C23BC70-57DD-270E-0FC3-45511E48600E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Tests", "tests\CleanArchitecture.Tests\CleanArchitecture.Tests.csproj", "{E0C65AAA-E8D0-6FDA-14C1-7EDB841E3193}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.AppHost.IntegrationTests", "tests\CleanArchitecture.AppHost.IntegrationTests\CleanArchitecture.AppHost.IntegrationTests.csproj", "{E0C65AAA-E8D0-6FDA-14C1-7EDB841E3193}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
