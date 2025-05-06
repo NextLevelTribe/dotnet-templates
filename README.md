@@ -2,14 +2,16 @@
 Item, Project, and Solution template including Clean Architecture.
 
 ## Solution structure
-- `.config`: Desired State Configuration (DSC) scripts to setup the development environment.
-- `templates`: The project of the template package.
-- `templates\content`
-  - `ItemTemplates`: Class, Enum, Interface, Record, and Struct templates.
-  - `ProjectTemplates`: Use Case templates for Clean Architecture.
-  - `SolutionTemplates`: Clean Architecture solution template.
-- `tests`
-  - `Template.Tests`: Tests for the templates.
+```powershell
+📁
+├──📁 .config                 # Desired State Configuration (DSC) scripts to setup the development environment.
+├──📁 templates               # Contains the template project.
+│  └──📁 content
+│     ├──📁 ItemTemplates     # Class, Enum, Interface, Record, and Struct templates.
+│     ├──📁 ProjectTemplates  # Use Case template for Clean Vertical Sliced Architecture.
+│     └──📁 SolutionTemplates # Clean Vertical Sliced Architecture solution template.
+└──📁 tests:                  # Unit and integration tests
+```
 
 ## Setting up the development environment
 The `.config` contains the Desired State Configuration (DSC) scripts to setup the development environment.
@@ -33,3 +35,4 @@ Tutorials
 Sample Sources
 - [.NET Template Samples](https://github.com/dotnet/templating/tree/main/dotnet-template-samples)
 - [Common project and item templates](https://github.com/dotnet/sdk/tree/main/template_feed)
+- [ASP.NET and Blazor templates templates](https://github.com/dotnet/aspnetcore/tree/main/src/ProjectTemplates)
