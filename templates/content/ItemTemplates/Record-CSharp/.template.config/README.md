@@ -1,0 +1,1 @@
+Based on: [Record-CSharp](https://github.com/dotnet/sdk/tree/main/template_feed/Microsoft.DotNet.Common.ItemTemplates/content/Record-CSharp)

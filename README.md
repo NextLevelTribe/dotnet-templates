@@ -1,6 +1,20 @@
 # .NET Templates
 Item, Project, and Solution template including Clean Architecture.
 
+# Getting Started
+
+## Installation Instructions
+The following prerequisites are required to build and run the solution:
+
+- [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
+
+The easiest way to get started is to install the [.NET template](https://www.nuget.org/packages/NextLevelTribe.Templates):
+```powershell
+dotnet new install NextLevelTribe.Templates
+```
+
+# Contributing
+
 ## Solution structure
 ```powershell
 📁
@@ -22,6 +36,26 @@ Run the `Configure-Desired-State.ps1` file in the `.config\windows` directory, w
 ```powershell
 cd .\.config\windows\
 .\Configure-Desired-State.ps1
+```
+
+#### Pack, install, and uninstall
+In the `templates` folder.
+Run the following command to build template project and create the NuGet package in the `.\bin\Release` folder:
+
+```powershell
+dotnet pack
+```
+
+Install the template package with the following command:
+
+```powershell
+dotnet new install .\bin\Release\NextLevelTribe.Templates.9.0.0.nupkg
+```
+
+Uninstall the template package with the following command:
+
+```powershell
+dotnet new uninstall NextLevelTribe.Templates
 ```
 
 ## Resources for template development

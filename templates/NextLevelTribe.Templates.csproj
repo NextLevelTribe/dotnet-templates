@@ -3,7 +3,7 @@
   <PropertyGroup>
     <!-- The package metadata. -->
     <!-- Follow the instructions on https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices -->
-    <PackageId>NextLevelTribe.Dotnet.Templates</PackageId>
+    <PackageId>NextLevelTribe.Templates</PackageId>
     <PackageVersion>9.0.0</PackageVersion>
     <Title>Next Level Tribe: .NET Templates</Title>
     <Authors>Next Level Tribe</Authors>

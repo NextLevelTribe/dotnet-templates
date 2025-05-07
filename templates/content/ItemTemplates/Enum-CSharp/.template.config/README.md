@@ -1,0 +1,1 @@
+Based on: [Enum-CSharp](https://github.com/dotnet/sdk/tree/main/template_feed/Microsoft.DotNet.Common.ItemTemplates/content/Enum-CSharp)
