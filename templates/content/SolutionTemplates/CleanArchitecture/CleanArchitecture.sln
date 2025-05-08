@@ -2,26 +2,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.AppHost", "src\CleanArchitecture.AppHost\CleanArchitecture.AppHost.csproj", "{6362845C-03C8-4AA0-AB1B-916485B0E31D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.AppHost", "src\CleanArchitecture.AppHost\CleanArchitecture.AppHost.csproj", "{20000000-0000-0000-0000-000000000000}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.ServiceDefaults", "src\CleanArchitecture.ServiceDefaults\CleanArchitecture.ServiceDefaults.csproj", "{043316F4-B2CB-6A2E-C0F1-01F18CD2CCDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.ServiceDefaults", "src\CleanArchitecture.ServiceDefaults\CleanArchitecture.ServiceDefaults.csproj", "{30000000-0000-0000-0000-000000000000}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.ApiService", "src\CleanArchitecture.ApiService\CleanArchitecture.ApiService.csproj", "{1A9304E8-7920-4054-C06C-CBF6990382CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.ApiService", "src\CleanArchitecture.ApiService\CleanArchitecture.ApiService.csproj", "{40000000-0000-0000-0000-000000000000}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Web", "src\CleanArchitecture.Web\CleanArchitecture.Web.csproj", "{2C23BC70-57DD-270E-0FC3-45511E48600E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Web", "src\CleanArchitecture.Web\CleanArchitecture.Web.csproj", "{50000000-0000-0000-0000-000000000000}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.AppHost.IntegrationTests", "tests\CleanArchitecture.AppHost.IntegrationTests\CleanArchitecture.AppHost.IntegrationTests.csproj", "{E0C65AAA-E8D0-6FDA-14C1-7EDB841E3193}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.AppHost.IntegrationTests", "tests\CleanArchitecture.AppHost.IntegrationTests\CleanArchitecture.AppHost.IntegrationTests.csproj", "{60000000-0000-0000-0000-000000000000}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{10000000-1000-0000-0000-000000000000}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F2318CF9-D793-437F-B8F5-47C6952EBE54}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{10000000-2000-0000-0000-000000000000}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{10000000-3000-0000-0000-000000000000}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Domain", "src\CleanArchitecture.Domain\CleanArchitecture.Domain.csproj", "{16836EE0-CD62-498B-B036-803E256E4A39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Domain", "src\CleanArchitecture.Domain\CleanArchitecture.Domain.csproj", "{70000000-0000-0000-0000-000000000000}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,43 +29,43 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6362845C-03C8-4AA0-AB1B-916485B0E31D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6362845C-03C8-4AA0-AB1B-916485B0E31D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6362845C-03C8-4AA0-AB1B-916485B0E31D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6362845C-03C8-4AA0-AB1B-916485B0E31D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{043316F4-B2CB-6A2E-C0F1-01F18CD2CCDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{043316F4-B2CB-6A2E-C0F1-01F18CD2CCDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{043316F4-B2CB-6A2E-C0F1-01F18CD2CCDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{043316F4-B2CB-6A2E-C0F1-01F18CD2CCDE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A9304E8-7920-4054-C06C-CBF6990382CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A9304E8-7920-4054-C06C-CBF6990382CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A9304E8-7920-4054-C06C-CBF6990382CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A9304E8-7920-4054-C06C-CBF6990382CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C23BC70-57DD-270E-0FC3-45511E48600E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C23BC70-57DD-270E-0FC3-45511E48600E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C23BC70-57DD-270E-0FC3-45511E48600E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C23BC70-57DD-270E-0FC3-45511E48600E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E0C65AAA-E8D0-6FDA-14C1-7EDB841E3193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E0C65AAA-E8D0-6FDA-14C1-7EDB841E3193}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E0C65AAA-E8D0-6FDA-14C1-7EDB841E3193}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E0C65AAA-E8D0-6FDA-14C1-7EDB841E3193}.Release|Any CPU.Build.0 = Release|Any CPU
-		{16836EE0-CD62-498B-B036-803E256E4A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16836EE0-CD62-498B-B036-803E256E4A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16836EE0-CD62-498B-B036-803E256E4A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16836EE0-CD62-498B-B036-803E256E4A39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20000000-0000-0000-0000-000000000000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20000000-0000-0000-0000-000000000000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20000000-0000-0000-0000-000000000000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20000000-0000-0000-0000-000000000000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30000000-0000-0000-0000-000000000000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30000000-0000-0000-0000-000000000000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30000000-0000-0000-0000-000000000000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30000000-0000-0000-0000-000000000000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40000000-0000-0000-0000-000000000000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40000000-0000-0000-0000-000000000000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40000000-0000-0000-0000-000000000000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40000000-0000-0000-0000-000000000000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50000000-0000-0000-0000-000000000000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50000000-0000-0000-0000-000000000000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50000000-0000-0000-0000-000000000000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50000000-0000-0000-0000-000000000000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60000000-0000-0000-0000-000000000000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60000000-0000-0000-0000-000000000000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60000000-0000-0000-0000-000000000000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60000000-0000-0000-0000-000000000000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70000000-0000-0000-0000-000000000000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70000000-0000-0000-0000-000000000000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70000000-0000-0000-0000-000000000000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70000000-0000-0000-0000-000000000000}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{6362845C-03C8-4AA0-AB1B-916485B0E31D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
-		{043316F4-B2CB-6A2E-C0F1-01F18CD2CCDE} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
-		{1A9304E8-7920-4054-C06C-CBF6990382CB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
-		{2C23BC70-57DD-270E-0FC3-45511E48600E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
-		{E0C65AAA-E8D0-6FDA-14C1-7EDB841E3193} = {F2318CF9-D793-437F-B8F5-47C6952EBE54}
-		{16836EE0-CD62-498B-B036-803E256E4A39} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{20000000-0000-0000-0000-000000000000} = {10000000-1000-0000-0000-000000000000}
+		{30000000-0000-0000-0000-000000000000} = {10000000-1000-0000-0000-000000000000}
+		{40000000-0000-0000-0000-000000000000} = {10000000-1000-0000-0000-000000000000}
+		{50000000-0000-0000-0000-000000000000} = {10000000-1000-0000-0000-000000000000}
+		{60000000-0000-0000-0000-000000000000} = {10000000-2000-0000-0000-000000000000}
+		{70000000-0000-0000-0000-000000000000} = {10000000-1000-0000-0000-000000000000}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {AE8E1438-9AD8-4B14-A9FC-1C7AE6855803}
+		SolutionGuid = {10000000-0000-0000-0000-000000000000}
 	EndGlobalSection
 EndGlobal

@@ -8,7 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsAspireHost>true</IsAspireHost>
-    <UserSecretsId>bb60cb45-a87e-4cb7-91d1-60e47715494a</UserSecretsId>
+    <UserSecretsId>20000000-1000-0000-0000-000000000000</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
