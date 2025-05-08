@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Next Level Tribe",
+  "classifications": [
+    "Web",
+    "Blazor",
+    "ASP.NET",
+    ".NET Aspire",
+    "Clean Architecture"
+  ],
+  "name": "Next Level Tribe: Clean Architecture",
+  "defaultName": "CleanApp",
+  "description": "A complete web app setup: .NET Aspire, front-end, back-end, tests, and caching.",
+  "groupIdentity": "NextLevelTribe.Web.CleanArchitecture",
+  "precedence": "9000",
+  "identity": "NextLevelTribe.Web.CleanArchitecture.CSharp",
+  "shortName": "nlt-clean-arch",
+  "sourceName": "CleanArchitecture",
+  "preferDefaultName": true,
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "primaryOutputs": [
+    {
+      "path": "CleanArchitecture.sln",
+      "condition": "(hostIdentifier == \"dotnetcli\" || hostIdentifier == \"dotnetcli-preview\")"
+    },
+    {
+      "path": "src\\CleanArchitecture.AppHost\\CleanArchitecture.AppHost.csproj"
+    },
+    {
+      "path": "src\\CleanArchitecture.ServiceDefaults\\CleanArchitecture.ServiceDefaults.csproj"
+    },
+    {
+      "path": "src\\CleanArchitecture.ApiService\\CleanArchitecture.ApiService.csproj"
+    },
+    {
+      "path": "src\\CleanArchitecture.Web\\CleanArchitecture.Web.csproj"
+    },
+    {
+      "path": "tests\\CleanArchitecture.Tests\\CleanArchitecture.Tests.csproj"
+    }
+  ],
+  "symbols": {
+    "DefaultNamespace": {
+    "type": "bind",
+    "binding": "msbuild:RootNamespace",
+    "replaces": "Company.ClassLibrary1",
+    "defaultValue": "Company.ClassLibrary1"
+    }
+  },
+  "postActions": [
+    {
+      "id": "restore",
+      "condition": "(!skipRestore)",
+      "description": "Restore NuGet packages required by this project.",
+      "manualInstructions": [
+        {
+          "text": "Run 'dotnet restore'"
+        }
+      ],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    }
+  ]
+}
