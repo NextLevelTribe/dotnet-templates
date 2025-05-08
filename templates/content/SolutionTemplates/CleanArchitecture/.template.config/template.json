@@ -17,6 +17,7 @@
   "shortName": "nlt-clean-arch",
   "sourceName": "CleanArchitecture",
   "preferDefaultName": true,
+  "preferNameDirectory": true,
   "tags": {
     "language": "C#",
     "type": "solution"
@@ -45,7 +46,8 @@
         "**/*.filelist",
         "**/*.user",
         "**/*.lock.json",
-        "**/TestResults/**"
+        "**/TestResults/**",
+        "**/.vs/**"
       ],
       "copyOnly": [
         "**/wwwroot/bootstrap/**"
