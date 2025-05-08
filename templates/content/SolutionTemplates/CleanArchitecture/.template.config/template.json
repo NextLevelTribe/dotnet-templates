@@ -34,10 +34,255 @@
     "60000000-0000-0000-0000-000000000000",
     "70000000-0000-0000-0000-000000000000"
   ],
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        ".template.config/**/*",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json",
+        "**/TestResults/**"
+      ],
+      "copyOnly": [
+        "**/wwwroot/bootstrap/**"
+      ]
+    }
+  ],
+  "symbols": {
+    "skipRestore": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "If specified, skips the automatic restore of the project on create.",
+      "defaultValue": "false"
+    },
+    "appHostHttpPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTP endpoint in launchSettings.json of the AppHost project."
+    },
+    "appHostHttpPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 15000,
+        "high": 15300
+      }
+    },
+    "appHostHttpPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "appHostHttpPort",
+        "fallbackVariableName": "appHostHttpPortGenerated"
+      },
+      "replaces": "15000"
+    },
+    "appHostHttpsPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTPS endpoint in launchSettings.json of the AppHost project. This option is only applicable when the parameter no-https is not used."
+    },
+    "appHostHttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 17000,
+        "high": 17300
+      }
+    },
+    "appHostHttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "appHostHttpsPort",
+        "fallbackVariableName": "appHostHttpsPortGenerated"
+      },
+      "replaces": "17000"
+    },
+    "appHostOtlpHttpPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the OTLP HTTP endpoint in launchSettings.json of the AppHost project."
+    },
+    "appHostOtlpHttpPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 19000,
+        "high": 19300
+      }
+    },
+    "appHostOtlpHttpPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "appHostOtlpHttpPort",
+        "fallbackVariableName": "appHostOtlpHttpPortGenerated"
+      },
+      "replaces": "19000"
+    },
+    "appHostOtlpHttpsPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the OTLP HTTPS endpoint in launchSettings.json of the AppHost project."
+    },
+    "appHostOtlpHttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 21000,
+        "high": 21300
+      }
+    },
+    "appHostOtlpHttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "appHostOtlpHttpsPort",
+        "fallbackVariableName": "appHostOtlpHttpsPortGenerated"
+      },
+      "replaces": "21000"
+    },
+    "appHostResourceHttpPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the resource service HTTP endpoint in launchSettings.json of the AppHost project."
+    },
+    "appHostResourceHttpPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 20000,
+        "high": 20300
+      }
+    },
+    "appHostResourceHttpPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "appHostResourceHttpPort",
+        "fallbackVariableName": "appHostResourceHttpPortGenerated"
+      },
+      "replaces": "20000"
+    },
+    "appHostResourceHttpsPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the resource service HTTPS endpoint in launchSettings.json of the AppHost project."
+    },
+    "appHostResourceHttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 22000,
+        "high": 22300
+      }
+    },
+    "appHostResourceHttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "appHostResourceHttpsPort",
+        "fallbackVariableName": "appHostResourceHttpsPortGenerated"
+      },
+      "replaces": "22000"
+    },
+    "webHttpPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTP endpoint in launchSettings.json of the Web project."
+    },
+    "webHttpPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 5000,
+        "high": 5300
+      }
+    },
+    "webHttpPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "webHttpPort",
+        "fallbackVariableName": "webHttpPortGenerated"
+      },
+      "replaces": "5000"
+    },
+    "webHttpsPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTPS endpoint in launchSettings.json of the Web project. This option is only applicable when the parameter no-https is not used."
+    },
+    "webHttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 7000,
+        "high": 7300
+      }
+    },
+    "webHttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "webHttpsPort",
+        "fallbackVariableName": "webHttpsPortGenerated"
+      },
+      "replaces": "7000"
+    },
+    "apiServiceHttpPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTP endpoint in launchSettings.json of the ApiService project."
+    },
+    "apiServiceHttpPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 5301,
+        "high": 5600
+      }
+    },
+    "apiServiceHttpPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "apiServiceHttpPort",
+        "fallbackVariableName": "apiServiceHttpPortGenerated"
+      },
+      "replaces": "5301"
+    },
+    "apiServiceHttpsPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTPS endpoint in launchSettings.json of the ApiService project. This option is only applicable when the parameter no-https is not used."
+    },
+    "apiServiceHttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 7301,
+        "high": 7600
+      }
+    },
+    "apiServiceHttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "apiServiceHttpsPort",
+        "fallbackVariableName": "apiServiceHttpsPortGenerated"
+      },
+      "replaces": "7301"
+    }
+  },
   "primaryOutputs": [
     {
-      "path": "CleanArchitecture.sln",
-      "condition": "(hostIdentifier == \"dotnetcli\" || hostIdentifier == \"dotnetcli-preview\")"
+      "path": "CleanArchitecture.sln"
     },
     {
       "path": "src\\CleanArchitecture.AppHost\\CleanArchitecture.AppHost.csproj"
@@ -46,23 +291,18 @@
       "path": "src\\CleanArchitecture.ServiceDefaults\\CleanArchitecture.ServiceDefaults.csproj"
     },
     {
+      "path": "src\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj"
+    },
+    {
       "path": "src\\CleanArchitecture.ApiService\\CleanArchitecture.ApiService.csproj"
     },
     {
       "path": "src\\CleanArchitecture.Web\\CleanArchitecture.Web.csproj"
     },
     {
-      "path": "tests\\CleanArchitecture.Tests\\CleanArchitecture.Tests.csproj"
+      "path": "tests\\CleanArchitecture.AppHost.IntegrationTests\\CleanArchitecture.AppHost.IntegrationTests.csproj"
     }
   ],
-  "symbols": {
-    "DefaultNamespace": {
-    "type": "bind",
-    "binding": "msbuild:RootNamespace",
-    "replaces": "Company.ClassLibrary1",
-    "defaultValue": "Company.ClassLibrary1"
-    }
-  },
   "postActions": [
     {
       "id": "restore",
