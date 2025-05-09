@@ -7,9 +7,9 @@ namespace Template.Tests.ItemTemplates;
 public sealed class MSTestTestClassCSharpTests : TestBase
 {
     private const string _templateName = "nlt-mstest-class";
-    private const string _relativeTemplatePath = @"templates\content\ItemTemplates\MSTest-TestClass-CSharp\";
+    private const string _templateFolderName = "MSTest-TestClass-CSharp";
 
-    public MSTestTestClassCSharpTests() : base(_relativeTemplatePath)
+    public MSTestTestClassCSharpTests() : base(_templateFolderName)
     { }
 
     [TestMethod]
