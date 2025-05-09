@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 env:
-  CONFIGURATION: 'Release '
+  CONFIGURATION: 'Release'
 
 jobs:
   build:
