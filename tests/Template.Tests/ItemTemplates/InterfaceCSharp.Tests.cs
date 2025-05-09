@@ -7,9 +7,9 @@ namespace Template.Tests.ItemTemplates;
 public sealed class InterfaceCSharpTests : TestBase
 {
     private const string _templateName = "nlt-interface";
-    private const string _relativeTemplatePath = @"templates\content\ItemTemplates\Interface-CSharp\";
+    private const string _templateFolderName = "Interface-CSharp";
 
-    public InterfaceCSharpTests() : base(_relativeTemplatePath)
+    public InterfaceCSharpTests() : base(_templateFolderName)
     { }
 
     [TestMethod]

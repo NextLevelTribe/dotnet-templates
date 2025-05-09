@@ -7,9 +7,9 @@ namespace Template.Tests.ItemTemplates;
 public sealed class RecordCSharpTests : TestBase
 {
     private const string _templateName = "nlt-record";
-    private const string _relativeTemplatePath = @"templates\content\ItemTemplates\Record-CSharp\";
+    private const string _templateFolderName = "Record-CSharp";
 
-    public RecordCSharpTests() : base(_relativeTemplatePath)
+    public RecordCSharpTests() : base(_templateFolderName)
     { }
 
     [TestMethod]
