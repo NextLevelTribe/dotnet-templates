@@ -32,7 +32,7 @@ jobs:
       run: dotnet restore
   
     - name: Build
-      run: dotnet build --configuration ${{ env.BUILD_CONFIGURATION }} --no-restore
+      run: dotnet build --no-restore --configuration ${{ env.BUILD_CONFIGURATION }}
   
     - name: Test
-      run: dotnet test --no-build --configuration ${{ env.BUILD_CONFIGURATION }} --verbosity minimal
+      run: dotnet test --no-build --configuration ${{ env.BUILD_CONFIGURATION }}
