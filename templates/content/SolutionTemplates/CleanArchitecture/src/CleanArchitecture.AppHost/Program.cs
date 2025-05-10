@@ -1,14 +1,16 @@
-internal class Program
+namespace CleanArchitecture.AppHost;
+
+public class Program
 {
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        var builder = DistributedApplication.CreateBuilder(args);
+        IDistributedApplicationBuilder builder = DistributedApplication.CreateBuilder(args);
 
         #if UseRedisCache
         var cache = builder.AddRedis("cache");
 
         #endif
-        var apiService = builder.AddProject<Projects.CleanArchitecture_ApiService>("apiservice");
+        IResourceBuilder<ProjectResource> apiService = builder.AddProject<Projects.CleanArchitecture_ApiService>("apiservice");
 
         builder.AddProject<Projects.CleanArchitecture_Web>("webfrontend")
             .WithExternalHttpEndpoints()
