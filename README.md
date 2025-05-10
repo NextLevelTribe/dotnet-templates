@@ -1,16 +1,36 @@
 # .NET Templates
-Item, Project, and Solution template including Clean Architecture.
+This project collects our templates about enterprise application development.
+It contains:
+- Items
+  - Class
+  - Enum
+  - Interface
+  - MSTest Class
+  - Record
+  - Struct
+- Projects
+- Solutions
+  - Clean Architecture
+
+If you find this project useful, please give it a star! ⭐
 
 # Getting Started
 
 ## Installation Instructions
-The following prerequisites are required to build and run the solution:
-
-- [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
-
 The easiest way to get started is to install the [.NET template](https://www.nuget.org/packages/NextLevelTribe.Templates):
 ```powershell
 dotnet new install NextLevelTribe.Templates
+```
+
+Run `dotnet new list` to see the templates.
+You can see available options with the `-?` option. For example in case of the Clean Architecture template:
+```powershell
+dotnet new nlt-clean-arch -?
+```
+
+Run this command to create a Clean Architecture solution structure in a subfolder name `Your.ProjectName`:
+```
+dotnet new nlt-clean-arch -n Your.ProjectName
 ```
 
 **Known Issues**:
@@ -23,7 +43,7 @@ dotnet new install NextLevelTribe.Templates
 📁
 ├─📁 .config               # Desired State Configuration (DSC) scripts to setup the development environment.
 ├─📁 templates             # Contains the template project.
-│ └─📁 content
+│ └─📁 content             # The dotnet template engine requires that all templates be stored in the content folder within the package.
 │   ├─📁 ItemTemplates     # Class, Enum, Interface, Record, and Struct templates.
 │   ├─📁 ProjectTemplates  # Use Case template for Clean Vertical Sliced Architecture.
 │   └─📁 SolutionTemplates # Clean Vertical Sliced Architecture solution template.
@@ -49,13 +69,13 @@ Run the following command to build template project and create the NuGet package
 dotnet pack
 ```
 
-Install the template package with the following command:
+Install the template:
 
 ```powershell
 dotnet new install .\bin\Release\NextLevelTribe.Templates.9.0.0.nupkg
 ```
 
-Uninstall the template package with the following command:
+Uninstall the template package:
 
 ```powershell
 dotnet new uninstall NextLevelTribe.Templates

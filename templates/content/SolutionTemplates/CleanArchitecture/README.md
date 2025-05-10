@@ -35,4 +35,4 @@ Run `dotnet build -tl` to build the solution.
 
 ### Technology
 
-### Patterns
+### Patterns Used
