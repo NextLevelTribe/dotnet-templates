@@ -6,7 +6,7 @@
   "groupIdentity": "NextLevelTribe.Record",
   "precedence": "10",
   "identity": "NextLevelTribe.Record.CSharp",
-  "name": "Next Level Tribe: Record",
+  "name": "Record",
   "shortName": "nlt-record",
   "sourceName": "Record1",
   "preferDefaultName": true,

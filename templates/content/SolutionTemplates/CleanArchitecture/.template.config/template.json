@@ -8,7 +8,7 @@
     ".NET Aspire",
     "Clean Architecture"
   ],
-  "name": "Next Level Tribe: Clean Architecture",
+  "name": "Clean Architecture",
   "defaultName": "CleanApp",
   "description": "A complete web app setup: .NET Aspire, front-end, back-end, tests, and caching.",
   "groupIdentity": "NextLevelTribe.Web.CleanArchitecture",
@@ -290,9 +290,6 @@
     }
   },
   "primaryOutputs": [
-    {
-      "path": "CleanArchitecture.sln"
-    },
     {
       "path": "src\\CleanArchitecture.AppHost\\CleanArchitecture.AppHost.csproj"
     },
