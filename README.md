@@ -43,7 +43,7 @@ dotnet new nlt-clean-arch -n Your.ProjectName
 📁
 ├─📁 .config               # Desired State Configuration (DSC) scripts to setup the development environment.
 ├─📁 templates             # Contains the template project.
-│ └─📁 content             # The dotnet template engine requires that all templates be stored in the content folder within the package.
+│ └─📁 content             # The dotnet template engine requires that all templates be stored in the content folder.
 │   ├─📁 ItemTemplates     # Class, Enum, Interface, Record, and Struct templates.
 │   ├─📁 ProjectTemplates  # Use Case template for Clean Vertical Sliced Architecture.
 │   └─📁 SolutionTemplates # Clean Vertical Sliced Architecture solution template.
@@ -70,13 +70,11 @@ dotnet pack
 ```
 
 Install the template:
-
 ```powershell
 dotnet new install .\bin\Release\NextLevelTribe.Templates.9.0.0.nupkg
 ```
 
 Uninstall the template package:
-
 ```powershell
 dotnet new uninstall NextLevelTribe.Templates
 ```
