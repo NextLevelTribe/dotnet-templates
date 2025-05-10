@@ -5,12 +5,18 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire client integrations.
 builder.AddServiceDefaults();
+#if (UseRedisCache)
 builder.AddRedisOutputCache("cache");
+#endif
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+#if (!UseRedisCache)
+builder.Services.AddOutputCache();
+
+#endif
 builder.Services.AddHttpClient<WeatherApiClient>(client =>
     {
         // This URL uses "https+http://" to indicate HTTPS is preferred over HTTP.

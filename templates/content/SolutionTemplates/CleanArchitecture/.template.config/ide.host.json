@@ -9,5 +9,11 @@
       "version": "(,17.9)"
     }
   ],
-  "symbolInfo": []
+  "symbolInfo": [
+    {
+      "id": "UseRedisCache",
+      "isVisible": true,
+      "persistenceScope": "templateGroup"
+    }
+  ]
 }

@@ -10,8 +10,10 @@
     <ProjectReference Include="..\CleanArchitecture.ServiceDefaults\CleanArchitecture.ServiceDefaults.csproj" />
   </ItemGroup>
 
+  <!--#if (UseRedisCache) -->
   <ItemGroup>
     <PackageReference Include="Aspire.StackExchange.Redis.OutputCaching" Version="9.0.0" />
   </ItemGroup>
 
+  <!--#endif -->
 </Project>

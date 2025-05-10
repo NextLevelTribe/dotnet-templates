@@ -34,9 +34,14 @@
       },
       "apiServiceHttpsPort": {
         "isHidden": true
+      },
+      "UseRedisCache": {
+        "longName": "use-redis-cache",
+        "shortName": ""
       }
   },
   "usageExamples": [
-    "--no-restore"
+    "--no-restore",
+    "--use-redis-cache"
   ]
 }
