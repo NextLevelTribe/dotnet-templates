@@ -13,6 +13,9 @@ The easiest way to get started is to install the [.NET template](https://www.nug
 dotnet new install NextLevelTribe.Templates
 ```
 
+**Known Issues**:
+- Don't include hyphens (`-`) in the name. See [dotnet/templating#6853](https://github.com/dotnet/templating/issues/6853).
+
 # Contributing
 
 ## Solution structure
