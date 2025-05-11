@@ -7,9 +7,9 @@ namespace Template.Tests.ItemTemplates;
 public sealed class StructCSharpTests : TestBase
 {
     private const string _templateName = "nlt-struct";
-    private const string _relativeTemplatePath = @"templates\content\ItemTemplates\Struct-CSharp\";
+    private const string _templateFolderName = "Struct-CSharp";
 
-    public StructCSharpTests() : base(_relativeTemplatePath)
+    public StructCSharpTests() : base(_templateFolderName)
     { }
 
     [TestMethod]

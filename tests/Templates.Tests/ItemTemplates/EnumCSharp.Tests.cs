@@ -7,9 +7,9 @@ namespace Template.Tests.ItemTemplates;
 public sealed class EnumCSharpTests : TestBase
 {
     private const string _templateName = "nlt-enum";
-    private const string _relativeTemplatePath = @"templates\content\ItemTemplates\Enum-CSharp\";
+    private const string _templateFolderName = "Enum-CSharp";
 
-    public EnumCSharpTests() : base(_relativeTemplatePath)
+    public EnumCSharpTests() : base(_templateFolderName)
     { }
 
     [TestMethod]
