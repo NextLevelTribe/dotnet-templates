@@ -1,6 +1,6 @@
 # .NET Templates
-This project collects our templates about enterprise application development.
-It contains:
+
+The goal of this template is to provide a straightforward and efficient approach to enterprise application development. Using this template, you can create:
 - Items
   - Class
   - Enum
@@ -17,23 +17,28 @@ If you find this project useful, please give it a star! ⭐
 # Getting Started
 
 ## Installation Instructions
-The easiest way to get started is to install the [.NET template](https://www.nuget.org/packages/NextLevelTribe.Templates):
+The easiest way to get started is to install the [templates package](https://www.nuget.org/packages/NextLevelTribe.Templates):
 ```powershell
 dotnet new install NextLevelTribe.Templates
 ```
 
-Run `dotnet new list` to see the templates.
-You can see available options with the `-?` option. For example in case of the Clean Architecture template:
+To list all of our templates:
+```
+dotnet new list nlt
+```
+
+You can see the available options for every template with the `-?` option.
+For example in case of the **Clean Architecture** template:
 ```powershell
 dotnet new nlt-clean-arch -?
 ```
 
-Run this command to create a Clean Architecture solution structure in a subfolder name `Your.ProjectName`:
+To create a **Clean Architecture** solution named `Your.ProjectName`:
 ```
 dotnet new nlt-clean-arch -n Your.ProjectName
 ```
 
-**Known Issues**:
+### Known Issues
 - Don't include hyphens (`-`) in the name. See [dotnet/templating#6853](https://github.com/dotnet/templating/issues/6853).
 
 # Contributing
