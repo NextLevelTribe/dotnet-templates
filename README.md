@@ -1,5 +1,6 @@
-# .NET Templates
+[![.NET](https://github.com/NextLevelTribe/dotnet-templates/actions/workflows/dotnet.yml/badge.svg)](https://github.com/NextLevelTribe/dotnet-templates/actions/workflows/dotnet.yml)
 
+# .NET Templates
 The goal of this template is to provide a straightforward and efficient approach to enterprise application development. Using this template, you can create:
 - Items
   - Class
