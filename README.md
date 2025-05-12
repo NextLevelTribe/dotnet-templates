@@ -1,5 +1,7 @@
 [![.NET](https://github.com/NextLevelTribe/dotnet-templates/actions/workflows/dotnet.yml/badge.svg)](https://github.com/NextLevelTribe/dotnet-templates/actions/workflows/dotnet.yml)
 
+[![CodeQL Analysis](https://github.com/NextLevelTribe/dotnet-templates/actions/workflows/analyze-with-codeql.yml/badge.svg)](https://github.com/NextLevelTribe/dotnet-templates/actions/workflows/analyze-with-codeql.yml)
+
 # .NET Templates
 The goal of this template is to provide a straightforward and efficient approach to enterprise application development. Using this template, you can create:
 - Items
@@ -28,8 +30,7 @@ To list all of our templates:
 dotnet new list nlt
 ```
 
-You can see the available options for every template with the `-?` option.
-For example in case of the **Clean Architecture** template:
+You can see the available options for every template with the `-?` option. For example in case of the **Clean Architecture** template:
 ```powershell
 dotnet new nlt-clean-arch -?
 ```
