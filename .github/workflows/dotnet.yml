@@ -5,6 +5,10 @@ name: .NET
 
 on:
   push:
+    branches: [ "main" ]
+    paths-ignore:
+      - 'README.md'
+      - '.config/**'
   pull_request:
     branches: [ "main" ]
     paths-ignore:
