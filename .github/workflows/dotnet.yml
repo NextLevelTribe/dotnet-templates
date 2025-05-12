@@ -5,9 +5,11 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+    paths-ignore:
+      - 'README.md'
+      - '.config/**'
 
 env:
   BUILD_CONFIGURATION: 'Release'
@@ -30,9 +32,9 @@ jobs:
 
     - name: Restore dependencies
       run: dotnet restore
-  
+
     - name: Build
       run: dotnet build --no-restore --configuration ${{ env.BUILD_CONFIGURATION }}
-  
+
     - name: Test
       run: dotnet test --no-build --configuration ${{ env.BUILD_CONFIGURATION }}
