@@ -3,12 +3,14 @@
 ##########################################################################################################
 # This configuration will install the tools necessary to start developing on this project on Windows.    #
 #                                                                                                        #
-# This will:                                                                                             #
-#     * Install Git                                                                                      #
-#     * Install .NET SDK                                                                                 #
-#     * Install Visual Studio Community and the following Workloads and Components                       #
-#         * ASP.NET and web development                                                                  #
-#         * .NET Aspire SDK                                                                              #
+# This will install:                                                                                     #
+#     * Git                                                                                              #
+#     * .NET SDK                                                                                         #
+#     * Visual Studio Community and the following Workloads and Components                               #
+#       * ASP.NET and web development                                                                    #
+#       * .NET Aspire SDK                                                                                #
+#     * Windows Subsystem for Linux (WSL)                                                                #
+#     * Docker Desktop                                                                                   #
 #                                                                                                        #
 ##########################################################################################################
 properties:
@@ -53,6 +55,7 @@ properties:
       settings:
         id: Microsoft.VisualStudio.2022.Community
         source: winget
+    # Section: Visual Studio - ASP.NET, Aspire
     - resource: Microsoft.VisualStudio.DSC/VSComponents
       id: VisualStudio.Components
       dependsOn:
@@ -68,3 +71,23 @@ properties:
           - Microsoft.VisualStudio.Workload.NetWeb
           - aspire
         includeRecommended: false
+    # Section: WSL
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.WSL
+      directives:
+        description: Install Microsoft.WSL
+        securityContext: elevated
+        allowPrerelease: true
+      settings:
+        id: Microsoft.WSL
+        source: winget
+    # Section: Docker Desktop
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Docker.DockerDesktop
+      directives:
+        description: Install Docker.DockerDesktop
+        securityContext: elevated
+        allowPrerelease: true
+      settings:
+        id: Docker.DockerDesktop
+        source: winget
