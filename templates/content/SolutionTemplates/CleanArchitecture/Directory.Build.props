@@ -1,0 +1,25 @@
+﻿<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build. -->
+<Project>
+  <PropertyGroup>
+
+    <!-- Package properties. See: https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#package-properties -->
+    <Authors>tAuthor</Authors>
+    <Company>tCompany</Company>
+
+    <!-- Framework properties. See: https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#targetframework -->
+    <TargetFramework>net9.0</TargetFramework>
+
+    <!-- Generated file properties. See: https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#generated-file-properties -->
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Code analysis properties. See: https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#code-analysis-properties -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisMode>Recommanded</AnalysisMode>
+    <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
+
+    <!-- C# Compiler Options for language feature rules. See: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/language -->
+    <Nullable>enable</Nullable>
+
+  </PropertyGroup>
+</Project>

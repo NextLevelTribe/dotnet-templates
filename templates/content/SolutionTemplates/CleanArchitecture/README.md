@@ -1,15 +1,21 @@
 # Clean Architecture
-The project was generated using the [TemplatePackageId](TemplateRepositoryUrl) version TemplatePackageVersion.
 
 ## Solution structure
-- `.config`: Desired State Configuration (DSC) scripts to setup the development environment.
-- `src`:
-  - `CleanArchitecture.AppHost`: .NET Aspire orchestrator project designed to connect and configure the different projects and services of your app.
-  - `CleanArchitecture.ServiceDefaults`: .NET Aspire shared project to manage configurations that are reused across the projects in your solution related to [resilience](https://learn.microsoft.com/en-us/dotnet/core/resilience/http-resilience), [service discovery](https://learn.microsoft.com/en-us/dotnet/aspire/service-discovery/overview), and [telemetry](https://learn.microsoft.com/en-us/dotnet/aspire/telemetry).
-  - `CleanArchitecture.Weather`: Weather microservice.
-  - `CleanArchitecture.Web`: Presentation layer: Blazor web app.
-- `tests`
-  - `CleanArchitecture.Tests`: Tests for the templates.
+```powershell
+📁
+├─📁 .config                             # Desired State Configuration (DSC) scripts to setup the development environment.
+├─📁 src                                 # Source code of the application
+│ ├─📁 CleanArchitecture.AppHost         # .NET Aspire orchestrator project designed to connect and configure the different projects and services of your app.
+│ ├─📁 CleanArchitecture.ServiceDefaults # .NET Aspire shared project to manage configurations that are reused across the projects in your solution related to resilience, service discovery, and telemetry.
+│ ├─📁 CleanArchitecture.Weather         # Weather microservice.
+│ └─📁 CleanArchitecture.Web             # Presentation layer: Blazor web app.
+├─📁 tests                               # Unit and integration tests
+│ └─📁 CleanArchitecture.AppHost.IntegrationTests
+├─🗎 .editorconfig         # Codeing styles.
+├─🗎 .gitignore
+├─🗎 Directory.Build.props # Solution level default settings of the projects.
+└─🗎 README.md             # You're reading this right now.
+```
 
 ## Application defaults
 
