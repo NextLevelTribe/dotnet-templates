@@ -2,6 +2,8 @@
 
 [![CodeQL Analysis](https://github.com/NextLevelTribe/dotnet-templates/actions/workflows/analyze-with-codeql.yml/badge.svg)](https://github.com/NextLevelTribe/dotnet-templates/actions/workflows/analyze-with-codeql.yml)
 
+[![Test PowerShell](https://github.com/NextLevelTribe/dotnet-templates/actions/workflows/powershell.yml/badge.svg)](https://github.com/NextLevelTribe/dotnet-templates/actions/workflows/powershell.yml)
+
 # .NET Templates
 The goal of this template is to provide a straightforward and efficient approach to enterprise application development. Using this template, you can create:
 - Items
