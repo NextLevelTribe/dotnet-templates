@@ -11,10 +11,11 @@
 │ └─📁 CleanArchitecture.Web             # Presentation layer: Blazor web app.
 ├─📁 tests                               # Unit and integration tests
 │ └─📁 CleanArchitecture.AppHost.IntegrationTests
-├─🗎 .editorconfig         # Codeing styles.
+├─🗎 .editorconfig            # Codeing styles.
 ├─🗎 .gitignore
-├─🗎 Directory.Build.props # Solution level default settings of the projects.
-└─🗎 README.md             # You're reading this right now.
+├─🗎 Directory.Build.props    # Solution level default project settings.
+├─🗎 Directory.Packages.props # Solution level Central Package Management.
+└─🗎 README.md                # You're reading this right now.
 ```
 
 ## Application defaults
