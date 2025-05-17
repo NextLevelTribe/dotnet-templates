@@ -6,7 +6,7 @@
   "groupIdentity": "NextLevelTribe.Struct",
   "precedence": "10",
   "identity": "NextLevelTribe.Struct.CSharp",
-  "name": "Next Level Tribe: Struct",
+  "name": "Struct",
   "shortName": "nlt-struct",
   "sourceName": "Struct1",
   "preferDefaultName": true,

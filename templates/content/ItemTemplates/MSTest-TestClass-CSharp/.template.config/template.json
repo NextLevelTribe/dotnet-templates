@@ -6,7 +6,7 @@
   "groupIdentity": "NextLevelTribe.Test.MSTest.TestClass",
   "precedence": "10",
   "identity": "NextLevelTribe.Test.MSTest.TestClass.CSharp",
-  "name": "Next Level Tribe: MSTest Test Class",
+  "name": "MSTest Test Class",
   "shortName": "nlt-mstest-class",
   "sourceName": "Test1",
   "preferDefaultName": true,
