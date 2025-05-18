@@ -11,7 +11,7 @@
   ],
   "name": "Clean Architecture",
   "defaultName": "CleanApp",
-  "description": "A complete web app setup: .NET Aspire, front-end, back-end, tests, and caching.",
+  "description": "A complete web app setup: .NET Aspire, front end, back end, tests, and caching.",
   "groupIdentity": "NextLevelTribe.Web.CleanArchitecture",
   "precedence": "9000",
   "identity": "NextLevelTribe.Web.CleanArchitecture.CSharp",
@@ -53,7 +53,8 @@
       "copyOnly": [
         "**/wwwroot/bootstrap/**"
       ]
-    }
+    },
+    { "source": "../Shared", "target": "./", "copyOnly": ["**/.editorconfig", "**/.gitignore"] }
   ],
   "symbols": {
     "UseRedisCache": {

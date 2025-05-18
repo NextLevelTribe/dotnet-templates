@@ -20,7 +20,7 @@ public class Program
         builder.AddRedisOutputCache("cache");
         #endif
 
-        // Add services to the container.
+        // Add services to the DI container.
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
 
@@ -37,6 +37,7 @@ public class Program
 
         WebApplication app = builder.Build();
 
+        // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
         {
             app.UseExceptionHandler("/Error", createScopeForErrors: true);
