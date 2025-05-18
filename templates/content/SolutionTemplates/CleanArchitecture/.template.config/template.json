@@ -4,8 +4,9 @@
   "classifications": [
     "Web",
     "Blazor",
-    "ASP.NET",
     ".NET Aspire",
+    "Web API",
+    "API",
     "Clean Architecture"
   ],
   "name": "Clean Architecture",
