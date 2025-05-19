@@ -15,6 +15,7 @@
 ├─🗎 .gitignore
 ├─🗎 Directory.Build.props    # Solution level default project settings.
 ├─🗎 Directory.Packages.props # Solution level Central Package Management.
+├─🗎 global.json              # Controls the .NET SDK version used when building the solution.
 └─🗎 README.md                # You're reading this right now.
 ```
 
@@ -35,11 +36,17 @@ cd .\.config\windows\
 .\Configure-Desired-State.ps1
 ```
 
+## Known Issues
+- In case of the test projects. The usual NuGet update and Visual Studio UI for managing NuGet packages does not work as expected with [MSTest.Sdk](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-mstest-sdk). See this issue for more details: [NuGet#13127](https://github.com/NuGet/Home/issues/13127). Dependabot will handle updating the version in the global.json file.
+
 ## Build
 Run `dotnet build -tl` to build the solution.
 
 ## Resources
 
 ### Technology
+- [.NET Aspire](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview)
+- [Blazor](https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-9.0&WT.mc_id=dotnet-35129-website)
+- [MSTest.Sdk](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-mstest-sdk)
 
 ### Patterns Used
