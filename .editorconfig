@@ -619,7 +619,7 @@ dotnet_diagnostic.MSTEST0026.severity = warning
 dotnet_diagnostic.MSTEST0030.severity = warning
 
 # 'System.ComponentModel.DescriptionAttribute' has no effect on test methods
-dotnet_diagnostic.MSTEST0031.severity = info
+dotnet_diagnostic.MSTEST0031.severity = suggestion
 
 # Review or remove the assertion as its condition is known to be always true
 dotnet_diagnostic.MSTEST0032.severity = warning
