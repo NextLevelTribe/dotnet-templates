@@ -13,7 +13,7 @@
 │ └─📁 CleanArchitecture.AppHost.IntegrationTests
 ├─🗎 .editorconfig            # Codeing styles.
 ├─🗎 .gitignore
-├─🗎 Directory.Build.props    # Solution level default project settings.
+├─🗎 Directory.Build.props    # Solution level project settings.
 ├─🗎 Directory.Packages.props # Solution level Central Package Management.
 ├─🗎 global.json              # Controls the .NET SDK version used when building the solution.
 └─🗎 README.md                # You're reading this right now.
