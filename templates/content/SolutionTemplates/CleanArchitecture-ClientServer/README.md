@@ -15,7 +15,7 @@
 ├─🗎 .gitignore
 ├─🗎 Directory.Build.props    # Solution level project settings.
 ├─🗎 Directory.Packages.props # Solution level Central Package Management.
-├─🗎 global.json              # Controls the .NET SDK version used when building the solution.
+├─🗎 global.json              # Controls the .NET SDK version used when building the solution. Mainly used to centrally manage the versioning of the MSTest.Sdk.
 └─🗎 README.md                # You're reading this right now.
 ```
 
