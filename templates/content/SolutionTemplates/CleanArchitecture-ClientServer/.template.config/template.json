@@ -293,6 +293,10 @@
   },
   "primaryOutputs": [
     {
+      "path": "CleanArchitecture.sln",
+      "condition": "(hostIdentifier == \"dotnetcli\" || hostIdentifier == \"dotnetcli-preview\")"
+    },
+    {
       "path": "src\\CleanArchitecture.AppHost\\CleanArchitecture.AppHost.csproj"
     },
     {

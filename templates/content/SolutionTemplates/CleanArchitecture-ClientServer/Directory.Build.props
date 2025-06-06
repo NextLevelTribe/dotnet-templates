@@ -13,7 +13,7 @@
     <OptimizeImplicitlyTriggeredBuild>true</OptimizeImplicitlyTriggeredBuild>
 
     <!-- Generated file properties. See: https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#generated-file-properties -->
-    <ImplicitUsings>enable</ImplicitUsings>
+    <ImplicitUsings>disable</ImplicitUsings>
 
     <!-- Code analysis properties. See: https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#code-analysis-properties -->
     <AnalysisMode>Recommanded</AnalysisMode>

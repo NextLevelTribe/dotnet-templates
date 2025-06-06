@@ -47,6 +47,8 @@ Run `dotnet build -tl` to build the solution.
 ### Technology
 - [.NET Aspire](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview)
 - [Blazor](https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-9.0&WT.mc_id=dotnet-35129-website)
+- [ASP.NET API](https://dotnet.microsoft.com/en-us/apps/aspnet/apis)
 - [MSTest.Sdk](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-mstest-sdk)
 
 ### Patterns Used
+- [REPR Design Pattern (Request-Endpoint-Response)](https://deviq.com/design-patterns/repr-design-pattern)

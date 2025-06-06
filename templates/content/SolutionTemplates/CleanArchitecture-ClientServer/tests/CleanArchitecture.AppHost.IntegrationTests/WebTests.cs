@@ -1,3 +1,6 @@
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Aspire.Hosting;
 
 namespace CleanArchitecture.AppHost.IntegrationTests;

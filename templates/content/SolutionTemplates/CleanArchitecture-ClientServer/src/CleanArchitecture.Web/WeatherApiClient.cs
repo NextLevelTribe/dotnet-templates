@@ -1,3 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace CleanArchitecture.Web;
 
 public class WeatherApiClient(HttpClient httpClient)
@@ -6,7 +13,7 @@ public class WeatherApiClient(HttpClient httpClient)
     {
         List<WeatherForecast>? forecasts = null;
 
-        await foreach (var forecast in httpClient.GetFromJsonAsAsyncEnumerable<WeatherForecast>("/weatherforecast", cancellationToken))
+        await foreach (WeatherForecast? forecast in httpClient.GetFromJsonAsAsyncEnumerable<WeatherForecast>("/weatherforecast", cancellationToken))
         {
             if (forecasts?.Count >= maxItems)
             {

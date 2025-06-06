@@ -1,3 +1,6 @@
+using Aspire.Hosting;
+using Aspire.Hosting.ApplicationModel;
+
 namespace CleanArchitecture.AppHost;
 
 public class Program
