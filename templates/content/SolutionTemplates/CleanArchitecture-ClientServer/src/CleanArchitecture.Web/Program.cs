@@ -22,16 +22,14 @@ public class Program
         builder.AddServiceDefaults();
         #if (UseRedisCache)
         builder.AddRedisOutputCache("cache");
+        #else
+        builder.Services.AddOutputCache();
         #endif
 
         // Add services to the DI container.
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
 
-        #if (!UseRedisCache)
-        builder.Services.AddOutputCache();
-
-        #endif
         _ = builder.Services.AddFeatures();
 
         WebApplication app = builder.Build();
