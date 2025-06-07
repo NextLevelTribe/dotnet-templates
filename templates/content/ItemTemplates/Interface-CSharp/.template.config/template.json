@@ -6,7 +6,7 @@
   "groupIdentity": "NextLevelTribe.Interface",
   "precedence": "10",
   "identity": "NextLevelTribe.Interface.CSharp",
-  "name": "Next Level Tribe: Interface",
+  "name": "Interface",
   "shortName": "nlt-interface",
   "sourceName": "Interface1",
   "preferDefaultName": true,

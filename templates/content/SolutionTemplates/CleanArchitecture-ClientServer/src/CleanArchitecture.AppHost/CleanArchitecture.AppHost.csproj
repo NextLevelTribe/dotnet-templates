@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>20000000-1000-0000-0000-000000000000</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CleanArchitecture.ApiService\CleanArchitecture.ApiService.csproj" />
+    <ProjectReference Include="..\CleanArchitecture.Web\CleanArchitecture.Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" />
+  <!--#if (UseRedisCache) -->
+    <PackageReference Include="Aspire.Hosting.Redis" />
+  <!--#endif -->
+  </ItemGroup>
+
+</Project>
