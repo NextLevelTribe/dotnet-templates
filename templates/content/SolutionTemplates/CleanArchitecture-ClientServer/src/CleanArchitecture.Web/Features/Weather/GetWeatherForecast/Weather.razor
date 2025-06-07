@@ -1,6 +1,7 @@
 ﻿@page "/weather"
-@attribute [StreamRendering(true)]
-@attribute [OutputCache(Duration = 5)]
+@using CleanArchitecture.Web.Features.Weather.GetWeatherForecast
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.OutputCaching
 
 @inject WeatherApiClient WeatherApi
 

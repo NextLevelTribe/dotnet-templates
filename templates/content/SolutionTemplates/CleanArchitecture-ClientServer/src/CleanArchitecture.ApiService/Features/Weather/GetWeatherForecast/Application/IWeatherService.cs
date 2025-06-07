@@ -2,5 +2,5 @@
 
 internal interface IWeatherService
 {
-    public WeatherForecastModel[] GetWeatherForecasts();
+    public WeatherForecast[] GetWeatherForecasts();
 }

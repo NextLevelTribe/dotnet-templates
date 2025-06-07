@@ -6,7 +6,7 @@ internal sealed class UseCase(IWeatherService weatherService)
 {
     private readonly IWeatherService _weatherService = weatherService ?? throw new ArgumentNullException(nameof(weatherService));
 
-    internal WeatherForecastModel[] Handle()
+    internal WeatherForecast[] Handle()
     {
         return _weatherService.GetWeatherForecasts();
     }

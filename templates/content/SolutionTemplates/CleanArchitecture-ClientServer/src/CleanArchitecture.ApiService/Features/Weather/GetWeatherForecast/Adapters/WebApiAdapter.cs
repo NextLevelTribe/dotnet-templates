@@ -8,7 +8,7 @@ internal sealed class WebApiAdapter(UseCase useCase)
 
     internal WebApiVM[] Handle()
     {
-        WeatherForecastModel[] weatherForecasts = _useCase.Handle();
+        WeatherForecast[] weatherForecasts = _useCase.Handle();
 
         WebApiVM[] response = new WebApiVM[weatherForecasts.Length];
         for (int i = 0; i < weatherForecasts.Length; i++)
