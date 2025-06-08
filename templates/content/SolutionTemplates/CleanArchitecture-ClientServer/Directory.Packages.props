@@ -22,5 +22,14 @@
     <!--#endif-->
     <!-- #endregion Aspire -->
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(AspNetCoreVersion)" />
+
+    <!-- #region EntityFramework -->
+    <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="$(AspNetCoreVersion)" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.5" />
+    <!-- #endregion EntityFramework -->
+
+    <!-- #region Testing -->
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="$(AspNetCoreVersion)" />
+    <!-- #endregion Testing -->
   </ItemGroup>
 </Project>

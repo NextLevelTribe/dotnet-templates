@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanArchitecture.Web.Features.Weather;
 
-internal static class DependencyInjection
+internal static class ConfigureApplicationExtensions
 {
     internal static IServiceCollection AddWeatherFeature(this IServiceCollection services)
     {

@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanArchitecture.Web.Features;
 
-internal static class DependencyInjection
+internal static class ConfigureApplicationExtensions
 {
     internal static IServiceCollection AddFeatures(this IServiceCollection services)
     {

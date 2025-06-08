@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Builder;
 
 namespace CleanArchitecture.ApiService.Features.Weather.GetWeatherForecast.Presentation;
 
-internal static class Endpoints
+internal static class Endpoint
 {
-    internal static WebApplication MapGetWeatherForecastEndpoints(this WebApplication app)
+    internal static WebApplication MapGetWeatherForecastEndpoint(this WebApplication app)
     {
         _ = app.MapGet("/weatherforecast", (WebApiAdapter adapter) =>
         {

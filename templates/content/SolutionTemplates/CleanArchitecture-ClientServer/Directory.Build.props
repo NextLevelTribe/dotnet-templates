@@ -21,6 +21,7 @@
     <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
 
     <!-- C# Compiler Options for language feature rules. See: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/language -->
+    <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
 
     <!-- C# Compiler Options to report errors and warnings. See: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/errors-warnings -->

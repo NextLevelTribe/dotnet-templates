@@ -1,6 +1,6 @@
-﻿namespace CleanArchitecture.ApiService.Features.Todo;
+﻿namespace CleanArchitecture.Domain.ToDo.Entities;
 
-internal sealed class Todo
+public sealed class ToDoItem
 {
     public int Id { get; set; }
     public string? Name { get; set; }
