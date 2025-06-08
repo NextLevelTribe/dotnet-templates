@@ -11,7 +11,7 @@ internal static class Endpoint
 {
     internal static WebApplication MapDeleteToDoItemEndpoint(this WebApplication app)
     {
-        _ = app.MapDelete("/todoitems/{id}", async Task<Results<NoContent, NotFound>> (int id, ToDoDb db) =>
+        _ = app.MapDelete("/todoitems/{id}", async Task<Results<NoContent, NotFound>> (int id, ToDoDbContext db) =>
         {
             ToDoItem? toDoItem = await db.ToDos.FindAsync(id);
             if (toDoItem is null)

@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\ToDo\AddNewToDoItem\Infrastructure\" />
+    <Folder Include="Features\ToDo\AddNewToDoItem\Adapters\" />
   </ItemGroup>
 
 </Project>

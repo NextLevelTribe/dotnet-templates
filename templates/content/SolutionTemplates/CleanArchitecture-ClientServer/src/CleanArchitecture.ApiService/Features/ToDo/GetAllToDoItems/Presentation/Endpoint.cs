@@ -10,7 +10,7 @@ internal static class Endpoint
 {
     internal static WebApplication MapGetAllToDoItemsEndpoints(this WebApplication app)
     {
-        _ = app.MapGet("/todoitems", async Task<IResult> (ToDoDb db) => TypedResults.Ok(await db.ToDos.ToArrayAsync()))
+        _ = app.MapGet("/todoitems", async Task<IResult> (ToDoDbContext db) => TypedResults.Ok(await db.ToDos.ToArrayAsync()))
             .WithName("GetAllToDoItems");
 
         return app;

@@ -13,7 +13,7 @@ internal static class Endpoint
     // To support partial updates, use HTTP PATCH.
     internal static WebApplication MapUpdateToDoItemEndpoint(this WebApplication app)
     {
-        _ = app.MapPut("/todoitems/{id}", async Task<Results<NoContent, NotFound>> (int id, ToDoItem inputToDoItem, ToDoDb db) =>
+        _ = app.MapPut("/todoitems/{id}", async Task<Results<NoContent, NotFound>> (int id, ToDoItem inputToDoItem, ToDoDbContext db) =>
         {
             ToDoItem? toDoItem = await db.ToDos.FindAsync(id);
             if (toDoItem is null)

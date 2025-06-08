@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
-using CleanArchitecture.ApiService.Features.ToDo.Shared.Infrastructure;
-using CleanArchitecture.Domain.ToDo.Entities;
+using CleanArchitecture.ApiService.Features.ToDo.AddNewToDoItem.Adapters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 
@@ -10,12 +9,10 @@ internal static class Endpoint
 {
     internal static WebApplication MapAddNewToDoItemEndpoint(this WebApplication app)
     {
-        _ = app.MapPost("/todoitems", async Task<IResult> (ToDoItem toDo, ToDoDb db) =>
+        _ = app.MapPost("/todoitems", async Task<IResult> (WebApiVM webApiVM, WebApiAdapter adapter) =>
         {
-            _ = db.ToDos.Add(toDo);
-            _ = await db.SaveChangesAsync();
-
-            return TypedResults.Created($"/todoitems/{toDo.Id}", toDo);
+            WebApiVM responseVM = await adapter.HandleAsync(webApiVM);
+            return TypedResults.Created($"/todoitems/{responseVM.Id}", responseVM);
         })
         .WithName("AddNewToDoItem");
 

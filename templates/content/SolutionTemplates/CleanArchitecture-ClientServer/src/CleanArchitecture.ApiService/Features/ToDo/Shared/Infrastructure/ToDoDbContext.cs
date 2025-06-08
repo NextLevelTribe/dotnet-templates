@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.ApiService.Features.ToDo.Shared.Infrastructure;
 
-internal class ToDoDb : DbContext
+internal class ToDoDbContext : DbContext
 {
-    public ToDoDb(DbContextOptions<ToDoDb> options) : base(options)
+    public ToDoDbContext(DbContextOptions<ToDoDbContext> options) : base(options)
     { }
 
     public DbSet<ToDoItem> ToDos => Set<ToDoItem>();
