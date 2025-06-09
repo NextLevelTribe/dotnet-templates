@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.ApiService.Features.ToDo.AddNewToDoItem.Adapters;
-using CleanArchitecture.ApiService.Features.ToDo.AddNewToDoItem.Application;
-using CleanArchitecture.ApiService.Features.ToDo.AddNewToDoItem.Infrastructure;
-using CleanArchitecture.ApiService.Features.ToDo.AddNewToDoItem.Presentation;
+﻿using CleanArchitecture.ApiService.Features.ToDo.CreateTodoItem.Adapters;
+using CleanArchitecture.ApiService.Features.ToDo.CreateTodoItem.Application;
+using CleanArchitecture.ApiService.Features.ToDo.CreateTodoItem.Infrastructure;
+using CleanArchitecture.ApiService.Features.ToDo.CreateTodoItem.Presentation;
 using CleanArchitecture.ApiService.Features.ToDo.DeleteToDoItem.Presentation;
 using CleanArchitecture.ApiService.Features.ToDo.GetAllToDoItems.Presentation;
 using CleanArchitecture.ApiService.Features.ToDo.GetCompletedToDoItems.Presentation;
@@ -32,7 +32,7 @@ internal static class ConfigureApplicationExtensions
         return app.MapGetAllToDoItemsEndpoints()
             .MapGetCompletedToDoItemsEndpoint()
             .MapGetToDoItemByIdEndpoint()
-            .MapAddNewToDoItemEndpoint()
+            .MapCreateTodoItemEndpoint()
             .MapUpdateToDoItemEndpoint()
             .MapDeleteToDoItemEndpoint();
     }

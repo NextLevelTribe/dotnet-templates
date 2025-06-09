@@ -11,8 +11,4 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\ToDo\AddNewToDoItem\Adapters\" />
-  </ItemGroup>
-
 </Project>

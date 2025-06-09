@@ -21,7 +21,7 @@ public sealed class ToDoTest : WebApplicationFactory<Program>
     }
 
     [TestMethod]
-    public async Task Post_AddNewToDoItem_ReturnsCreated()
+    public async Task Post_CreateTodoItem_ReturnsCreated()
     {
         // Arrange
         ToDoItem toDoItem = new()
@@ -85,7 +85,7 @@ public sealed class ToDoTest : WebApplicationFactory<Program>
     {
         // Arrange
         ToDoItem toDoItem = new();
-        ToDoItem addedToDoItem = await AddNewToDoItemAsync(toDoItem);
+        ToDoItem addedToDoItem = await CreateTodoItem(toDoItem);
         string requestUri = $"{_requestUriBase}/{addedToDoItem.Id}";
 
         // Act
@@ -115,7 +115,7 @@ public sealed class ToDoTest : WebApplicationFactory<Program>
     {
         // Arrange
         ToDoItem toDoItem = new() { IsComplete = false };
-        ToDoItem addedToDoItem = await AddNewToDoItemAsync(toDoItem);
+        ToDoItem addedToDoItem = await CreateTodoItem(toDoItem);
         string requestUri = $"{_requestUriBase}/{addedToDoItem.Id}";
 
         addedToDoItem.IsComplete = true;
@@ -147,7 +147,7 @@ public sealed class ToDoTest : WebApplicationFactory<Program>
     {
         // Arrange
         ToDoItem toDoItem = new();
-        ToDoItem addedToDoItem = await AddNewToDoItemAsync(toDoItem);
+        ToDoItem addedToDoItem = await CreateTodoItem(toDoItem);
         string requestUri = $"{_requestUriBase}/{addedToDoItem.Id}";
 
         // Act
@@ -157,7 +157,7 @@ public sealed class ToDoTest : WebApplicationFactory<Program>
         Assert.AreEqual(HttpStatusCode.NoContent, getResponse.StatusCode);
     }
 
-    private async Task<ToDoItem> AddNewToDoItemAsync(ToDoItem toDoItem)
+    private async Task<ToDoItem> CreateTodoItem(ToDoItem toDoItem)
     {
         using HttpResponseMessage postResponse = await _client.PostAsJsonAsync(_requestUriBase, toDoItem);
         ToDoItem? addedToDoItem = await postResponse.Content.ReadFromJsonAsync<ToDoItem>();

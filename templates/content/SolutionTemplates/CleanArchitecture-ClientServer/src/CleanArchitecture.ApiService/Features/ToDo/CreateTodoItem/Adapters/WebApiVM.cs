@@ -1,3 +1,3 @@
-namespace CleanArchitecture.ApiService.Features.ToDo.AddNewToDoItem.Adapters;
+namespace CleanArchitecture.ApiService.Features.ToDo.CreateTodoItem.Adapters;
 
 internal readonly record struct WebApiVM(int Id, string? Name, bool IsComplete);

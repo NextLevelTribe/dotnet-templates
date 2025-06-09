@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using CleanArchitecture.Domain.ToDo.Entities;
 
-namespace CleanArchitecture.ApiService.Features.ToDo.AddNewToDoItem.Application;
+namespace CleanArchitecture.ApiService.Features.ToDo.CreateTodoItem.Application;
 
 internal interface IRepository
 {
