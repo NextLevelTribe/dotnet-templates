@@ -11,9 +11,14 @@ internal static class Endpoint
 {
     internal static WebApplication MapGetCompletedToDoItemsEndpoint(this WebApplication app)
     {
-        _ = app.MapGet("/todoitems/complete", async Task<IResult> (ToDoDbContext db) => TypedResults.Ok(await db.ToDos.Where(t => t.IsComplete).ToArrayAsync()))
+        _ = app.MapGet("/todoitems/complete", GetCompletedToDoItems)
             .WithName("GetCompletedToDoItems");
 
         return app;
+    }
+
+    private static async Task<IResult> GetCompletedToDoItems(ToDoDbContext db)
+    {
+        return TypedResults.Ok(await db.ToDos.Where(t => t.IsComplete).ToArrayAsync());
     }
 }

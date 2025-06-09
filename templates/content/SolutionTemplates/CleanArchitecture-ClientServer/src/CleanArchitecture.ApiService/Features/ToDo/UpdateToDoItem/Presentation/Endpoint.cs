@@ -13,23 +13,25 @@ internal static class Endpoint
     // To support partial updates, use HTTP PATCH.
     internal static WebApplication MapUpdateToDoItemEndpoint(this WebApplication app)
     {
-        _ = app.MapPut("/todoitems/{id}", async Task<Results<NoContent, NotFound>> (int id, ToDoItem inputToDoItem, ToDoDbContext db) =>
-        {
-            ToDoItem? toDoItem = await db.ToDos.FindAsync(id);
-            if (toDoItem is null)
-            {
-                return TypedResults.NotFound();
-            }
-
-            toDoItem.Name = inputToDoItem.Name;
-            toDoItem.IsComplete = inputToDoItem.IsComplete;
-
-            _ = await db.SaveChangesAsync();
-
-            return TypedResults.NoContent();
-        })
+        _ = app.MapPut("/todoitems/{id}", UpdateToDoItem)
         .WithName("UpdateToDoItem");
 
         return app;
+    }
+
+    private static async Task<Results<NoContent, NotFound>> UpdateToDoItem(int id, ToDoItem inputToDoItem, ToDoDbContext db)
+    {
+        ToDoItem? toDoItem = await db.ToDos.FindAsync(id);
+        if (toDoItem is null)
+        {
+            return TypedResults.NotFound();
+        }
+
+        toDoItem.Name = inputToDoItem.Name;
+        toDoItem.IsComplete = inputToDoItem.IsComplete;
+
+        _ = await db.SaveChangesAsync();
+
+        return TypedResults.NoContent();
     }
 }

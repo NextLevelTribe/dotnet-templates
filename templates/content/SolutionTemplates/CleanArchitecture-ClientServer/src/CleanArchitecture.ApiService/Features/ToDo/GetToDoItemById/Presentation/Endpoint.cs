@@ -11,18 +11,20 @@ internal static class Endpoint
 {
     internal static WebApplication MapGetToDoItemByIdEndpoint(this WebApplication app)
     {
-        _ = app.MapGet("/todoitems/{id}", async Task<Results<Ok<ToDoItem>, NotFound>> (int id, ToDoDbContext db) =>
-        {
-            ToDoItem? toDoItem = await db.ToDos.FindAsync(id);
-            if (toDoItem is null)
-            {
-                return TypedResults.NotFound();
-            }
-
-            return TypedResults.Ok(toDoItem);
-        })
+        _ = app.MapGet("/todoitems/{id}", GetToDoItemById)
         .WithName("GetToDoItemById");
 
         return app;
+    }
+
+    private static async Task<Results<Ok<ToDoItem>, NotFound>> GetToDoItemById(int id, ToDoDbContext db)
+    {
+        ToDoItem? toDoItem = await db.ToDos.FindAsync(id);
+        if (toDoItem is null)
+        {
+            return TypedResults.NotFound();
+        }
+
+        return TypedResults.Ok(toDoItem);
     }
 }
