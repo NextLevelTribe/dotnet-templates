@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
-using CleanArchitecture.ApiService.Features.ToDo.CreateTodoItem.Adapters;
+using CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Adapters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 
-namespace CleanArchitecture.ApiService.Features.ToDo.CreateTodoItem.Presentation;
+namespace CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Presentation;
 
 internal static class Endpoint
 {

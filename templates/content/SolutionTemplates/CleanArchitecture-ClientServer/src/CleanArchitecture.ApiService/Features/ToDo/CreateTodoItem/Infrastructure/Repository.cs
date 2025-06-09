@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using CleanArchitecture.ApiService.Features.ToDo.CreateTodoItem.Application;
+using CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Application;
 using CleanArchitecture.ApiService.Features.ToDo.Shared.Infrastructure;
 using CleanArchitecture.Domain.ToDo.Entities;
 
-namespace CleanArchitecture.ApiService.Features.ToDo.CreateTodoItem.Infrastructure;
+namespace CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Infrastructure;
 
 internal sealed class Repository(ToDoDbContext toDoDbContext) : IRepository
 {

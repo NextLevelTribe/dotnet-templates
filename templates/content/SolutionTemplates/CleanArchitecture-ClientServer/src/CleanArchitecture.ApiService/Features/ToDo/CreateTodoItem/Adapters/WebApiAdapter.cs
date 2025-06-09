@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
-using CleanArchitecture.ApiService.Features.ToDo.CreateTodoItem.Application;
+using CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Application;
 using CleanArchitecture.Domain.ToDo.Entities;
 
-namespace CleanArchitecture.ApiService.Features.ToDo.CreateTodoItem.Adapters;
+namespace CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Adapters;
 
 internal sealed class WebApiAdapter(UseCase useCase)
 {

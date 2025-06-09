@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using CleanArchitecture.Domain.ToDo.Entities;
 
-namespace CleanArchitecture.ApiService.Features.ToDo.CreateTodoItem.Application;
+namespace CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Application;
 
 internal sealed class UseCase(IRepository repository)
 {
