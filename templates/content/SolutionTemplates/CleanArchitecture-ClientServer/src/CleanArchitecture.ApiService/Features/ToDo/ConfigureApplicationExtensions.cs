@@ -1,7 +1,4 @@
-﻿using CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Adapters;
-using CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Application;
-using CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Infrastructure;
-using CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Presentation;
+﻿using CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Presentation;
 using CleanArchitecture.ApiService.Features.ToDo.DeleteToDoItem.Presentation;
 using CleanArchitecture.ApiService.Features.ToDo.GetAllToDoItems.Presentation;
 using CleanArchitecture.ApiService.Features.ToDo.GetCompletedToDoItems.Presentation;
@@ -20,9 +17,14 @@ internal static class ConfigureApplicationExtensions
     {
         _ = services.AddDbContext<ToDoDbContext>(opt => opt.UseInMemoryDatabase("TodoList"))
             .AddDatabaseDeveloperPageExceptionFilter() // Enables displaying database-related exceptions.
-            .AddScoped<WebApiAdapter>()
-            .AddScoped<UseCase>()
-            .AddScoped<IRepository, Repository>();
+            .AddScoped<CreateToDoItem.Application.UseCase>()
+            .AddScoped<CreateToDoItem.Application.IRepository, CreateToDoItem.Infrastructure.Repository>()
+            .AddScoped<CreateToDoItem.Adapters.WebApiAdapter>()
+            .AddScoped<DeleteToDoItem.Application.UseCase>()
+            .AddScoped<DeleteToDoItem.Application.IRepository, DeleteToDoItem.Infrastructure.Repository>()
+            .AddScoped<GetAllToDoItems.Application.UseCase>()
+            .AddScoped<GetAllToDoItems.Application.IRepository, GetAllToDoItems.Infrastructure.Repository>()
+            .AddScoped<GetAllToDoItems.Adapters.WebApiAdapter>();
 
         return services;
     }

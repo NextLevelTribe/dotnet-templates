@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Adapters;
 using CleanArchitecture.Domain.ToDo.Entities;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -9,13 +10,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CleanArchitecture.ApiService.FunctionalTests;
 
 [TestClass]
-public sealed class ToDoTest : WebApplicationFactory<Program>
+public sealed class ToDoTests : WebApplicationFactory<Program>
 {
     private const string _requestUriBase = "/todoitems";
 
     private readonly HttpClient _client;
 
-    public ToDoTest()
+    public ToDoTests()
     {
         _client = CreateClient();
     }
@@ -84,8 +85,7 @@ public sealed class ToDoTest : WebApplicationFactory<Program>
     public async Task Get_GetToDoItemById_ReturnsOk()
     {
         // Arrange
-        ToDoItem toDoItem = new();
-        ToDoItem addedToDoItem = await CreateTodoItem(toDoItem);
+        WebApiVM addedToDoItem = await CreateTodoItem();
         string requestUri = $"{_requestUriBase}/{addedToDoItem.Id}";
 
         // Act
@@ -114,11 +114,10 @@ public sealed class ToDoTest : WebApplicationFactory<Program>
     public async Task Put_UpdateToDoItem_ReturnsNoContent()
     {
         // Arrange
-        ToDoItem toDoItem = new() { IsComplete = false };
-        ToDoItem addedToDoItem = await CreateTodoItem(toDoItem);
+        WebApiVM addedToDoItem = await CreateTodoItem();
         string requestUri = $"{_requestUriBase}/{addedToDoItem.Id}";
 
-        addedToDoItem.IsComplete = true;
+        //addedToDoItem.IsComplete = true;
 
         // Act
         using HttpResponseMessage getResponse = await _client.PutAsJsonAsync(requestUri, addedToDoItem);
@@ -146,8 +145,7 @@ public sealed class ToDoTest : WebApplicationFactory<Program>
     public async Task Delete_DeleteToDoItem_ReturnsNoContent()
     {
         // Arrange
-        ToDoItem toDoItem = new();
-        ToDoItem addedToDoItem = await CreateTodoItem(toDoItem);
+        WebApiVM addedToDoItem = await CreateTodoItem();
         string requestUri = $"{_requestUriBase}/{addedToDoItem.Id}";
 
         // Act
@@ -157,12 +155,11 @@ public sealed class ToDoTest : WebApplicationFactory<Program>
         Assert.AreEqual(HttpStatusCode.NoContent, getResponse.StatusCode);
     }
 
-    private async Task<ToDoItem> CreateTodoItem(ToDoItem toDoItem)
+    private async Task<WebApiVM> CreateTodoItem(string? name = "", bool isComplete = false)
     {
-        using HttpResponseMessage postResponse = await _client.PostAsJsonAsync(_requestUriBase, toDoItem);
-        ToDoItem? addedToDoItem = await postResponse.Content.ReadFromJsonAsync<ToDoItem>();
-        Assert.IsNotNull(addedToDoItem);
-
+        WebApiVM request = new(0, name, isComplete);
+        using HttpResponseMessage postResponse = await _client.PostAsJsonAsync(_requestUriBase, request);
+        WebApiVM addedToDoItem = await postResponse.Content.ReadFromJsonAsync<WebApiVM>();
         return addedToDoItem;
     }
 

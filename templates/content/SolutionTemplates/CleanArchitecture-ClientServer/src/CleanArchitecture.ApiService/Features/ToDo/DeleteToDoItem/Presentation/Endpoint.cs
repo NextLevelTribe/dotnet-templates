@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
-using CleanArchitecture.ApiService.Features.ToDo.Shared.Infrastructure;
-using CleanArchitecture.Domain.ToDo.Entities;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using CleanArchitecture.ApiService.Features.ToDo.DeleteToDoItem.Application;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -17,17 +17,9 @@ internal static class Endpoint
         return app;
     }
 
-    private static async Task<Results<NoContent, NotFound>> DeleteToDoItem(int id, ToDoDbContext db)
+    private static async Task<Results<NoContent, NotFound>> DeleteToDoItem(int id, UseCase usecase, CancellationToken cancellationToken)
     {
-        ToDoItem? toDoItem = await db.ToDos.FindAsync(id);
-        if (toDoItem is null)
-        {
-            return TypedResults.NotFound();
-        }
-
-        _ = db.ToDos.Remove(toDoItem);
-        _ = await db.SaveChangesAsync();
-
-        return TypedResults.NoContent();
+        bool success = await usecase.Handle(id, cancellationToken);
+        return success ? TypedResults.NoContent() : TypedResults.NotFound();
     }
 }

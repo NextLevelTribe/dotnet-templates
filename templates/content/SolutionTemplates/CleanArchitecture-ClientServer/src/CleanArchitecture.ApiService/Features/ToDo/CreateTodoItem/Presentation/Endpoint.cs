@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 using CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Adapters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -13,9 +14,9 @@ internal static class Endpoint
         return app;
     }
 
-    private static async Task<IResult> CreateTodoItem(WebApiVM webApiVM, WebApiAdapter adapter)
+    private static async Task<IResult> CreateTodoItem(WebApiVM webApiVM, WebApiAdapter adapter, CancellationToken cancellationToken)
     {
-        WebApiVM responseVM = await adapter.Handle(webApiVM);
+        WebApiVM responseVM = await adapter.Handle(webApiVM, cancellationToken);
         return TypedResults.Created($"/todoitems/{responseVM.Id}", responseVM);
     }
 }

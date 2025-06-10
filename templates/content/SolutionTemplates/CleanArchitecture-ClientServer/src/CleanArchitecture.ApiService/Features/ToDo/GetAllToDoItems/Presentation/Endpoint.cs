@@ -1,8 +1,8 @@
-﻿using System.Threading.Tasks;
-using CleanArchitecture.ApiService.Features.ToDo.Shared.Infrastructure;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using CleanArchitecture.ApiService.Features.ToDo.GetAllToDoItems.Adapters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.ApiService.Features.ToDo.GetAllToDoItems.Presentation;
 
@@ -16,8 +16,8 @@ internal static class Endpoint
         return app;
     }
 
-    private static async Task<IResult> GetAllToDoItems(ToDoDbContext db)
+    private static async Task<IResult> GetAllToDoItems(WebApiAdapter adapter, CancellationToken cancellationToken)
     {
-        return TypedResults.Ok(await db.ToDos.ToArrayAsync());
+        return TypedResults.Ok(await adapter.Handle(cancellationToken));
     }
 }
