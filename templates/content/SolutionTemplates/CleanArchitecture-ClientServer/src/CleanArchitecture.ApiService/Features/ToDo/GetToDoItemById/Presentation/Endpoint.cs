@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
-using CleanArchitecture.ApiService.Features.ToDo.Shared.Infrastructure;
-using CleanArchitecture.Domain.ToDo.Entities;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using CleanArchitecture.ApiService.Features.ToDo.GetToDoItemById.Adapters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -17,14 +17,14 @@ internal static class Endpoint
         return app;
     }
 
-    private static async Task<Results<Ok<ToDoItem>, NotFound>> GetToDoItemById(int id, ToDoDbContext db)
+    private static async Task<Results<Ok<ResponseVM>, NotFound>> GetToDoItemById(int id, WebApiAdapter adapter, CancellationToken cancellationToken)
     {
-        ToDoItem? toDoItem = await db.ToDos.FindAsync(id);
-        if (toDoItem is null)
+        (ResponseVM responseVM, bool success) = await adapter.Handle(id, cancellationToken);
+        if (!success)
         {
             return TypedResults.NotFound();
         }
 
-        return TypedResults.Ok(toDoItem);
+        return TypedResults.Ok(responseVM);
     }
 }

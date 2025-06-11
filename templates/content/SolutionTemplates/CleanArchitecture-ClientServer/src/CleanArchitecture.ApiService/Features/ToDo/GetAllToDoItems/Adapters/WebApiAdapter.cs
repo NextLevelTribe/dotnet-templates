@@ -9,10 +9,10 @@ internal sealed class WebApiAdapter(UseCase useCase)
 {
     private readonly UseCase _useCase = useCase;
 
-    internal async Task<WebApiVM[]> Handle(CancellationToken cancellationToken = default)
+    internal async Task<ResponseVM[]> Handle(CancellationToken cancellationToken = default)
     {
         ToDoItem[] allToDoItems = await _useCase.Handle(cancellationToken);
-        WebApiVM[] viewModels = new WebApiVM[allToDoItems.Length];
+        ResponseVM[] viewModels = new ResponseVM[allToDoItems.Length];
 
         for (int i = 0; i < allToDoItems.Length; i++)
         {

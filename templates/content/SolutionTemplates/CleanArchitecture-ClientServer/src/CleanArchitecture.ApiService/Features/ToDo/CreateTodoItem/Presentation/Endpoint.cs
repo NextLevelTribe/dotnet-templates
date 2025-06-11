@@ -14,9 +14,9 @@ internal static class Endpoint
         return app;
     }
 
-    private static async Task<IResult> CreateTodoItem(WebApiVM webApiVM, WebApiAdapter adapter, CancellationToken cancellationToken)
+    private static async Task<IResult> CreateTodoItem(RequestVM webApiVM, WebApiAdapter adapter, CancellationToken cancellationToken)
     {
-        WebApiVM responseVM = await adapter.Handle(webApiVM, cancellationToken);
+        ResponseVM responseVM = await adapter.Handle(webApiVM, cancellationToken);
         return TypedResults.Created($"/todoitems/{responseVM.Id}", responseVM);
     }
 }

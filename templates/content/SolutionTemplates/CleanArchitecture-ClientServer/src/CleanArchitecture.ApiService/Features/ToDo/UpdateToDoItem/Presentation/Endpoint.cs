@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
-using CleanArchitecture.ApiService.Features.ToDo.Shared.Infrastructure;
-using CleanArchitecture.Domain.ToDo.Entities;
+using CleanArchitecture.ApiService.Features.ToDo.UpdateToDoItem.Adapters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -13,24 +12,19 @@ internal static class Endpoint
     // To support partial updates, use HTTP PATCH.
     internal static WebApplication MapUpdateToDoItemEndpoint(this WebApplication app)
     {
-        _ = app.MapPut("/todoitems/{id}", UpdateToDoItem)
+        _ = app.MapPut("/todoitems/", UpdateToDoItem)
         .WithName("UpdateToDoItem");
 
         return app;
     }
 
-    private static async Task<Results<NoContent, NotFound>> UpdateToDoItem(int id, ToDoItem inputToDoItem, ToDoDbContext db)
+    private static async Task<Results<NoContent, NotFound>> UpdateToDoItem(RequestVM requestVM, WebApiAdapter adapter)
     {
-        ToDoItem? toDoItem = await db.ToDos.FindAsync(id);
-        if (toDoItem is null)
+        bool success = await adapter.Handle(requestVM, default);
+        if (!success)
         {
             return TypedResults.NotFound();
         }
-
-        toDoItem.Name = inputToDoItem.Name;
-        toDoItem.IsComplete = inputToDoItem.IsComplete;
-
-        _ = await db.SaveChangesAsync();
 
         return TypedResults.NoContent();
     }

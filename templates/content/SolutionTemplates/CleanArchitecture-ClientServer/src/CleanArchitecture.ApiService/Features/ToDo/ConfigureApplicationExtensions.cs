@@ -1,7 +1,6 @@
 ﻿using CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Presentation;
 using CleanArchitecture.ApiService.Features.ToDo.DeleteToDoItem.Presentation;
 using CleanArchitecture.ApiService.Features.ToDo.GetAllToDoItems.Presentation;
-using CleanArchitecture.ApiService.Features.ToDo.GetCompletedToDoItems.Presentation;
 using CleanArchitecture.ApiService.Features.ToDo.GetToDoItemById.Presentation;
 using CleanArchitecture.ApiService.Features.ToDo.Shared.Infrastructure;
 using CleanArchitecture.ApiService.Features.ToDo.UpdateToDoItem.Presentation;
@@ -24,7 +23,13 @@ internal static class ConfigureApplicationExtensions
             .AddScoped<DeleteToDoItem.Application.IRepository, DeleteToDoItem.Infrastructure.Repository>()
             .AddScoped<GetAllToDoItems.Application.UseCase>()
             .AddScoped<GetAllToDoItems.Application.IRepository, GetAllToDoItems.Infrastructure.Repository>()
-            .AddScoped<GetAllToDoItems.Adapters.WebApiAdapter>();
+            .AddScoped<GetAllToDoItems.Adapters.WebApiAdapter>()
+            .AddScoped<GetToDoItemById.Application.UseCase>()
+            .AddScoped<GetToDoItemById.Application.IRepository, GetToDoItemById.Infrastructure.Repository>()
+            .AddScoped<GetToDoItemById.Adapters.WebApiAdapter>()
+            .AddScoped<UpdateToDoItem.Application.UseCase>()
+            .AddScoped<UpdateToDoItem.Application.IRepository, UpdateToDoItem.Infrastructure.Repository>()
+            .AddScoped<UpdateToDoItem.Adapters.WebApiAdapter>();
 
         return services;
     }
@@ -32,7 +37,6 @@ internal static class ConfigureApplicationExtensions
     internal static WebApplication MapToDoFeatureEndpoints(this WebApplication app)
     {
         return app.MapGetAllToDoItemsEndpoints()
-            .MapGetCompletedToDoItemsEndpoint()
             .MapGetToDoItemByIdEndpoint()
             .MapCreateTodoItemEndpoint()
             .MapUpdateToDoItemEndpoint()

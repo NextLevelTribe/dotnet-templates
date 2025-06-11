@@ -1,3 +1,3 @@
 namespace CleanArchitecture.ApiService.Features.ToDo.GetAllToDoItems.Adapters;
 
-public readonly record struct WebApiVM(int Id, string? Name, bool IsComplete);
+public readonly record struct ResponseVM(int Id, string? Name, bool IsComplete);

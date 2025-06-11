@@ -14,10 +14,6 @@ Content-Type: application/json
 
 ###
 
-GET {{CleanArchitecture.ApiService_HostAddress}}/todoitems/complete
-
-###
-
 @id=1
 DELETE {{CleanArchitecture.ApiService_HostAddress}}/todoitems/{{id}}
 
@@ -27,10 +23,11 @@ GET {{CleanArchitecture.ApiService_HostAddress}}/todoitems/{{id}}
 
 ###
 
-PUT {{CleanArchitecture.ApiService_HostAddress}}/todoitems/{{id}}
+PUT {{CleanArchitecture.ApiService_HostAddress}}/todoitems/
 Content-Type: application/json
 
 {
+  "id": 1,
   "name":"walk cat",
   "isComplete":false
 }

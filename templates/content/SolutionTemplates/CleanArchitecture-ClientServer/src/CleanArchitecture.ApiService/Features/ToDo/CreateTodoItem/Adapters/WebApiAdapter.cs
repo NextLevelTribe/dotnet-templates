@@ -9,13 +9,13 @@ internal sealed class WebApiAdapter(UseCase useCase)
 {
     private readonly UseCase _useCase = useCase;
 
-    internal async Task<WebApiVM> Handle(WebApiVM webApiVM, CancellationToken cancellationToken = default)
+    internal async Task<ResponseVM> Handle(RequestVM requestVM, CancellationToken cancellationToken = default)
     {
-        ToDoItem toDoItem = new() { Name = webApiVM.Name, IsComplete = webApiVM.IsComplete };
+        ToDoItem toDoItem = new() { Name = requestVM.Name, IsComplete = requestVM.IsComplete };
 
         ToDoItem responseToDoItem = await _useCase.Handle(toDoItem, cancellationToken);
-        WebApiVM viewModel = new(responseToDoItem.Id, responseToDoItem.Name, responseToDoItem.IsComplete);
+        ResponseVM responseVM = new(responseToDoItem.Id, responseToDoItem.Name, responseToDoItem.IsComplete);
 
-        return viewModel;
+        return responseVM;
     }
 }
