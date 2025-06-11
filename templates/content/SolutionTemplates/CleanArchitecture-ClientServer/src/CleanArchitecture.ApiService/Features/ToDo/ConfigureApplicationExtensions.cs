@@ -14,7 +14,7 @@ internal static class ConfigureApplicationExtensions
 {
     internal static IServiceCollection AddToDoFeature(this IServiceCollection services)
     {
-        _ = services.AddDbContext<ToDoDbContext>(opt => opt.UseInMemoryDatabase("TodoList"))
+        _ = services.AddDbContext<ToDoDbContext>(opt => opt.UseInMemoryDatabase("ToDoList"))
             .AddDatabaseDeveloperPageExceptionFilter() // Enables displaying database-related exceptions.
             .AddScoped<CreateToDoItem.Application.UseCase>()
             .AddScoped<CreateToDoItem.Application.IRepository, CreateToDoItem.Infrastructure.Repository>()
