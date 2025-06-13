@@ -6,15 +6,15 @@ internal sealed class WebApiAdapter(UseCase useCase)
 {
     private readonly UseCase _useCase = useCase;
 
-    internal WebApiVM[] Handle()
+    internal ResponseVM[] Handle()
     {
         WeatherForecast[] weatherForecasts = _useCase.Handle();
 
-        WebApiVM[] response = new WebApiVM[weatherForecasts.Length];
+        ResponseVM[] response = new ResponseVM[weatherForecasts.Length];
         for (int i = 0; i < weatherForecasts.Length; i++)
         {
             int teamperatureF = 32 + (int)(weatherForecasts[i].TemperatureC / 0.5556);
-            WebApiVM viewModel = new(weatherForecasts[i].Date, weatherForecasts[i].TemperatureC, teamperatureF, weatherForecasts[i].Summary);
+            ResponseVM viewModel = new(weatherForecasts[i].Date, weatherForecasts[i].TemperatureC, teamperatureF, weatherForecasts[i].Summary);
             response[i] = viewModel;
         }
 

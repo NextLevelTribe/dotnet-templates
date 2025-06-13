@@ -9,7 +9,7 @@ internal static class Endpoint
     {
         _ = app.MapGet("/weatherforecast", (WebApiAdapter adapter) =>
         {
-            WebApiVM[] response = adapter.Handle();
+            ResponseVM[] response = adapter.Handle();
             return response;
         })
         .WithName("GetWeatherForecast");
