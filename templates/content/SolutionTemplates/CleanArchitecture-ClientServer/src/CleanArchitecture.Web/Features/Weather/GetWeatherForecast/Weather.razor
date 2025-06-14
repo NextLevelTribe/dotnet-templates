@@ -11,7 +11,7 @@
 
 <p>This component demonstrates showing data loaded from a backend API service.</p>
 
-@if (forecasts == null)
+@if (forecasts is null)
 {
     <p><em>Loading...</em></p>
 }
@@ -45,6 +45,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await WeatherApi.GetWeatherAsync();
+        forecasts = await WeatherApi.GetWeather();
     }
 }

@@ -2,4 +2,4 @@ using System;
 
 namespace CleanArchitecture.Web.Features.Weather.GetWeatherForecast;
 
-internal record WeatherForecast(DateOnly Date, int TemperatureC, int TemperatureF, string Summary);
+public sealed record class WeatherForecast(DateOnly Date, int TemperatureC, int TemperatureF, string Summary);

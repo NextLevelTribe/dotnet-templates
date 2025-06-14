@@ -6,25 +6,26 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Web.Features.Weather.GetWeatherForecast;
 
-internal class WeatherApiClient(HttpClient httpClient)
+internal sealed class WeatherApiClient(HttpClient httpClient)
 {
-    internal async Task<WeatherForecast[]> GetWeatherAsync(int maxItems = 10, CancellationToken cancellationToken = default)
+    internal async Task<WeatherForecast[]> GetWeather(int maxItems = 10, CancellationToken cancellationToken = default)
     {
-        List<WeatherForecast> forecasts = new(maxItems);
+        List<WeatherForecast> response = new(maxItems);
 
-        await foreach (WeatherForecast? forecast in httpClient.GetFromJsonAsAsyncEnumerable<WeatherForecast>("/weatherforecast", cancellationToken))
+        IAsyncEnumerable<WeatherForecast?> forecasts = httpClient.GetFromJsonAsAsyncEnumerable<WeatherForecast>("/weatherforecast", cancellationToken);
+        await foreach (WeatherForecast? forecast in forecasts)
         {
-            if (forecasts.Count >= maxItems)
+            if (response.Count >= maxItems)
             {
                 break;
             }
 
             if (forecast is not null)
             {
-                forecasts.Add(forecast);
+                response.Add(forecast);
             }
         }
 
-        return forecasts.Count > 0 ? forecasts.ToArray() : [];
+        return (response.Count > 0) ? response.ToArray() : [];
     }
 }

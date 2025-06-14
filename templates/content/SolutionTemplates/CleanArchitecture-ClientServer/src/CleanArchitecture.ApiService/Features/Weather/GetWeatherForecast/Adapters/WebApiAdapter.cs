@@ -13,6 +13,7 @@ internal sealed class WebApiAdapter(UseCase useCase)
         ResponseVM[] response = new ResponseVM[weatherForecasts.Length];
         for (int i = 0; i < weatherForecasts.Length; i++)
         {
+            // In a real-word app angularsen/UnitsNet would be used for conversation.
             int teamperatureF = 32 + (int)(weatherForecasts[i].TemperatureC / 0.5556);
             ResponseVM viewModel = new(weatherForecasts[i].Date, weatherForecasts[i].TemperatureC, teamperatureF, weatherForecasts[i].Summary);
             response[i] = viewModel;
