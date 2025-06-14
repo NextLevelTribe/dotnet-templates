@@ -6,7 +6,7 @@
   "groupIdentity": "NextLevelTribe.Enum",
   "precedence": "10",
   "identity": "NextLevelTribe.Enum.CSharp",
-  "name": "Next Level Tribe: Enum",
+  "name": "Enum",
   "shortName": "nlt-enum",
   "sourceName": "Enum1",
   "preferDefaultName": true,

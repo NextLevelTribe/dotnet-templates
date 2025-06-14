@@ -1,0 +1,39 @@
+﻿@page "/todos"
+@using CleanArchitecture.Web.Features.ToDo.GetToDos
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.OutputCaching
+
+@inject ToDoApiClient ToDoApi
+
+<PageTitle>To-Dos</PageTitle>
+
+<h1>To-Dos</h1>
+
+<p>This component demonstrates showing data loaded from a backend API service.</p>
+
+@if (toDoItems is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <ul class="list-group">
+        @foreach (var toDoItem in toDoItems)
+        {
+            string itemClass = toDoItem.IsComplete ? "list-group-item-light" : "list-group-item-primary";
+            <li class="list-group-item @itemClass">
+                <strong>@toDoItem.Name</strong> (ID: @toDoItem.Id)
+                <span class="badge bg-secondary float-end">@(toDoItem.IsComplete ? "Completed" : "Pending")</span>
+            </li>
+        }
+    </ul>
+}
+
+@code {
+    private ToDoItem[]? toDoItems;
+
+    protected override async Task OnInitializedAsync()
+    {
+        toDoItems = await ToDoApi.GetAllToDoItems();
+    }
+}
