@@ -7,21 +7,20 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CleanArchitecture.ApiService.FunctionalTests.Features.ToDo;
 
 [TestClass]
-public sealed class DeleteToDoItemTests : ToDoTestsBase
+public sealed class DeleteToDoItemTests
 {
-    public DeleteToDoItemTests() : base("DeleteToDoItemTestsDb")
-    {
-    }
-
     [TestMethod]
     public async Task Delete_DeleteToDoItem_ReturnsNotFound()
     {
         // Arrange
+        await using ToDoTestApplication application = new(nameof(Delete_DeleteToDoItem_ReturnsNotFound));
+        using HttpClient client = application.CreateClient();
+
         int nonExistentId = 1;
-        string requestUri = $"{_requestUriBase}/{nonExistentId}";
+        string requestUri = $"{application.RequestUriBase}/{nonExistentId}";
 
         // Act
-        using HttpResponseMessage getResponse = await _client.DeleteAsync(requestUri);
+        using HttpResponseMessage getResponse = await client.DeleteAsync(requestUri);
 
         // Assert
         Assert.AreEqual(HttpStatusCode.NotFound, getResponse.StatusCode);
@@ -31,11 +30,14 @@ public sealed class DeleteToDoItemTests : ToDoTestsBase
     public async Task Delete_DeleteToDoItem_ReturnsNoContent()
     {
         // Arrange
-        ResponseVM addedToDoItem = await CreateTodoItem();
-        string requestUri = $"{_requestUriBase}/{addedToDoItem.Id}";
+        await using ToDoTestApplication application = new(nameof(Delete_DeleteToDoItem_ReturnsNotFound));
+        using HttpClient client = application.CreateClient();
+
+        ResponseVM addedToDoItem = await application.CreateTodoItem();
+        string requestUri = $"{application.RequestUriBase}/{addedToDoItem.Id}";
 
         // Act
-        using HttpResponseMessage getResponse = await _client.DeleteAsync(requestUri);
+        using HttpResponseMessage getResponse = await client.DeleteAsync(requestUri);
 
         // Assert
         Assert.AreEqual(HttpStatusCode.NoContent, getResponse.StatusCode);

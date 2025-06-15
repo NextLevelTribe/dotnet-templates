@@ -12,13 +12,13 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace CleanArchitecture.ApiService.FunctionalTests.Features.ToDo;
 
-public abstract class ToDoTestsBase : WebApplicationFactory<Program>
+internal class ToDoTestApplication : WebApplicationFactory<Program>
 {
-    private protected const string _requestUriBase = "/todoitems";
+    private readonly HttpClient _client;
 
-    private protected readonly HttpClient _client;
+    internal string RequestUriBase => "/todoitems";
 
-    public ToDoTestsBase(string inMemoryDatabaseName)
+    public ToDoTestApplication(string inMemoryDatabaseName)
     {
         _ = WithWebHostBuilder(builder =>
         {
@@ -45,10 +45,10 @@ public abstract class ToDoTestsBase : WebApplicationFactory<Program>
         }
     }
 
-    private protected async Task<ResponseVM> CreateTodoItem(string? name = "", bool isComplete = false)
+    internal async Task<ResponseVM> CreateTodoItem(string? name = "", bool isComplete = false)
     {
         RequestVM request = new(name, isComplete);
-        using HttpResponseMessage postResponse = await _client.PostAsJsonAsync(_requestUriBase, request);
+        using HttpResponseMessage postResponse = await _client.PostAsJsonAsync(RequestUriBase, request);
         ResponseVM addedToDoItem = await postResponse.Content.ReadFromJsonAsync<ResponseVM>();
         return addedToDoItem;
     }

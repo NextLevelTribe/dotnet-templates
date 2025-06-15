@@ -6,17 +6,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CleanArchitecture.ApiService.FunctionalTests.Features.ToDo;
 
 [TestClass]
-public sealed class GetAllToDoItemsTests : ToDoTestsBase
+public sealed class GetAllToDoItemsTests
 {
-    public GetAllToDoItemsTests() : base("GetAllToDoItemsTestsDb")
-    {
-    }
-
     [TestMethod]
     public async Task Get_GetAllTodos_ReturnsOk()
     {
         // Arrange - Act
-        using HttpResponseMessage response = await _client.GetAsync(_requestUriBase);
+        await using ToDoTestApplication application = new(nameof(Get_GetAllTodos_ReturnsOk));
+        using HttpClient client = application.CreateClient();
+
+        using HttpResponseMessage response = await client.GetAsync(application.RequestUriBase);
 
         // Assert
         Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);

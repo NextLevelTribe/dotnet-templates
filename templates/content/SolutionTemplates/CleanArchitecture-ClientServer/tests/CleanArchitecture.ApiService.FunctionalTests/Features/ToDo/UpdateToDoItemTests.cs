@@ -9,20 +9,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CleanArchitecture.ApiService.FunctionalTests.Features.ToDo;
 
 [TestClass]
-public sealed class UpdateToDoItemTests : ToDoTestsBase
+public sealed class UpdateToDoItemTests
 {
-    public UpdateToDoItemTests() : base("UpdateToDoItemTestsDb")
-    {
-    }
-
     [TestMethod]
     public async Task Put_UpdateToDoItem_ReturnsNotFound()
     {
         // Arrange
+        await using ToDoTestApplication application = new(nameof(Put_UpdateToDoItem_ReturnsNotFound));
+        using HttpClient client = application.CreateClient();
+
         ToDoItem toDoItem = new();
 
         // Act
-        using HttpResponseMessage getResponse = await _client.PutAsJsonAsync(_requestUriBase, toDoItem);
+        using HttpResponseMessage getResponse = await client.PutAsJsonAsync(application.RequestUriBase, toDoItem);
 
         // Assert
         Assert.AreEqual(HttpStatusCode.NotFound, getResponse.StatusCode);
@@ -32,13 +31,16 @@ public sealed class UpdateToDoItemTests : ToDoTestsBase
     public async Task Put_UpdateToDoItem_ReturnsNoContent()
     {
         // Arrange
+        await using ToDoTestApplication application = new(nameof(Put_UpdateToDoItem_ReturnsNoContent));
+        using HttpClient client = application.CreateClient();
+
         ApiService.Features.ToDo.CreateToDoItem.Adapters.ResponseVM addedToDoItem = await CreateTodoItem();
         Assert.IsFalse(addedToDoItem.IsComplete);
 
         RequestVM updatedToDoItem = new(addedToDoItem.Id, addedToDoItem.Name, true);
 
         // Act
-        using HttpResponseMessage getResponse = await _client.PutAsJsonAsync(_requestUriBase, updatedToDoItem);
+        using HttpResponseMessage getResponse = await client.PutAsJsonAsync(application.RequestUriBase, updatedToDoItem);
 
         // Assert
         Assert.AreEqual(HttpStatusCode.NoContent, getResponse.StatusCode);

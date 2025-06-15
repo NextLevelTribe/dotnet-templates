@@ -8,16 +8,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CleanArchitecture.ApiService.FunctionalTests.Features.ToDo;
 
 [TestClass]
-public sealed class CreateToDoItemTests : ToDoTestsBase
+public sealed class CreateToDoItemTests
 {
-    public CreateToDoItemTests() : base("CreateToDoItemTestDb")
-    {
-    }
-
     [TestMethod]
     public async Task Post_CreateTodoItem_ReturnsCreated()
     {
         // Arrange
+        await using ToDoTestApplication application = new(nameof(Post_CreateTodoItem_ReturnsCreated));
+        using HttpClient client = application.CreateClient();
+
         RequestVM requestVM = new()
         {
             Name = "Walk the dog",
@@ -25,7 +24,7 @@ public sealed class CreateToDoItemTests : ToDoTestsBase
         };
 
         // Act
-        using HttpResponseMessage response = await _client.PostAsJsonAsync(_requestUriBase, requestVM);
+        using HttpResponseMessage response = await client.PostAsJsonAsync(application.RequestUriBase, requestVM);
 
         // Assert
         Assert.AreEqual(HttpStatusCode.Created, response.StatusCode);
