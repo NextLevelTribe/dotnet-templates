@@ -9,7 +9,7 @@ public class Program
     {
         IDistributedApplicationBuilder builder = DistributedApplication.CreateBuilder(args);
 
-        #if UseRedisCache
+        #if (UseRedisCache)
         var cache = builder.AddRedis("cache");
 
         #endif
@@ -17,7 +17,7 @@ public class Program
 
         builder.AddProject<Projects.CleanArchitecture_Web>("webfrontend")
             .WithExternalHttpEndpoints()
-        #if UseRedisCache
+        #if (UseRedisCache)
             .WithReference(cache)
             .WaitFor(cache)
         #endif

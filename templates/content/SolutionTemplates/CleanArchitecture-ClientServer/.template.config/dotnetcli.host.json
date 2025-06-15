@@ -38,7 +38,11 @@
       "UseRedisCache": {
         "longName": "use-redis-cache",
         "shortName": ""
-      }
+      },
+      "IncludeSampleContent": {
+        "longName": "include-sample-content",
+        "shortName": "sample"
+    }
   },
   "usageExamples": [
     "--no-restore",

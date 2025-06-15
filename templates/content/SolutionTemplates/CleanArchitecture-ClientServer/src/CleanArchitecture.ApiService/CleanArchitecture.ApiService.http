@@ -1,5 +1,10 @@
 ﻿@CleanArchitecture.ApiService_HostAddress = https://localhost:7301
 
+GET {{CleanArchitecture.ApiService_HostAddress}}/weatherforecast
+
+###
+
+#if (IncludeSampleContent)
 GET {{CleanArchitecture.ApiService_HostAddress}}/todoitems
 
 ###
@@ -33,3 +38,4 @@ Content-Type: application/json
 }
 
 ###
+#endif

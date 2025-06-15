@@ -52,11 +52,29 @@
       ],
       "copyOnly": [
         "**/wwwroot/bootstrap/**"
+      ],
+      "modifiers": [
+        {
+          "condition": "(!IncludeSampleContent)",
+          "exclude": [
+            "src/CleanArchitecture.Domain/ToDo/**",
+            "src/CleanArchitecture.ApiService/Features/ToDo/**",
+            "tests/CleanArchitecture.ApiService.FunctionalTests/Features/ToDo/**",
+            "src/CleanArchitecture.Web/Features/ToDo/**"
+          ]
+        }
       ]
     },
     { "source": "../Shared", "target": "./", "copyOnly": ["**/.editorconfig", "**/.gitignore"] }
   ],
   "symbols": {
+    "IncludeSampleContent": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "displayName": "Include the To-Do sample feature.",
+      "description": "Configures whether to add the To-Do sample feature to demonstrate basic usage patterns."
+    },
     "UseRedisCache": {
       "type": "parameter",
       "datatype": "bool",

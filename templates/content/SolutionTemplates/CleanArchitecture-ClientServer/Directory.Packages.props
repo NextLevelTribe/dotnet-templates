@@ -23,11 +23,13 @@
     <!-- #endregion Aspire -->
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(AspNetCoreVersion)" />
 
+    <!--#if (IncludeSampleContent) -->
     <!-- #region EntityFramework -->
     <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="$(AspNetCoreVersion)" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.5" />
     <!-- #endregion EntityFramework -->
-
+    <!--#endif-->
+    
     <!-- #region Testing -->
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="$(AspNetCoreVersion)" />
     <!-- #endregion Testing -->

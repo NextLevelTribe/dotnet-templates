@@ -11,6 +11,12 @@
   ],
   "symbolInfo": [
     {
+      "id": "IncludeSampleContent",
+      "isVisible": true,
+      "persistenceScope": "shared",
+      "persistenceScopeName": "NextLevelTribe"
+    },
+    {
       "id": "UseRedisCache",
       "isVisible": true,
       "persistenceScope": "templateGroup"
