@@ -1,48 +1,29 @@
-﻿using System.Linq;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using CleanArchitecture.ApiService.Features.ToDo.CreateToDoItem.Adapters;
 using CleanArchitecture.ApiService.Features.ToDo.Shared.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.AspNetCore.TestHost;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Hosting;
 
 namespace CleanArchitecture.ApiService.FunctionalTests.Features.ToDo;
 
 internal class ToDoTestApplication : WebApplicationFactory<Program>
 {
+    private readonly string _environment;
+    private readonly string _inMemoryDatabaseName;
     private readonly HttpClient _client;
 
     internal string RequestUriBase => "/todoitems";
 
-    public ToDoTestApplication(string inMemoryDatabaseName)
+    public ToDoTestApplication(string inMemoryDatabaseName, string environment = "Development")
     {
-        _ = WithWebHostBuilder(builder =>
-        {
-            _ = builder.ConfigureTestServices(services =>
-            {
-                RemoveDbServivesAndOptions(services);
-
-                _ = services.AddDbContext<ToDoDbContext>(opt => opt.UseInMemoryDatabase(inMemoryDatabaseName));
-            });
-        });
+        _inMemoryDatabaseName = inMemoryDatabaseName;
+        _environment = environment;
 
         _client = CreateClient();
-    }
-
-    private static void RemoveDbServivesAndOptions(IServiceCollection services)
-    {
-        _ = services.RemoveAll<ToDoDbContext>()
-            .RemoveAll<DbContextOptions>();
-
-        ServiceDescriptor[] dbContextOptions = services.Where(s => s.ServiceType.BaseType == typeof(DbContextOptions)).ToArray();
-        foreach (ServiceDescriptor option in dbContextOptions)
-        {
-            _ = services.Remove(option);
-        }
     }
 
     internal async Task<ResponseVM> CreateTodoItem(string? name = "", bool isComplete = false)
@@ -51,6 +32,26 @@ internal class ToDoTestApplication : WebApplicationFactory<Program>
         using HttpResponseMessage postResponse = await _client.PostAsJsonAsync(RequestUriBase, request);
         ResponseVM addedToDoItem = await postResponse.Content.ReadFromJsonAsync<ResponseVM>();
         return addedToDoItem;
+    }
+
+    protected override IHost CreateHost(IHostBuilder builder)
+    {
+        _ = builder.UseEnvironment(_environment);
+
+        // Add mock/test services to the builder here
+        _ = builder.ConfigureServices(services =>
+        {
+            _ = services.AddScoped(serviceProvider =>
+            {
+                // Replace database with in-memory database for tests
+                return new DbContextOptionsBuilder<ToDoDbContext>()
+                .UseInMemoryDatabase(_inMemoryDatabaseName)
+                .UseApplicationServiceProvider(serviceProvider)
+                .Options;
+            });
+        });
+
+        return base.CreateHost(builder);
     }
 
     protected override void Dispose(bool disposing)
