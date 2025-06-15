@@ -1,0 +1,37 @@
+<!-- For more info on central package management go to https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management -->
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <AspireVersion>9.2.1</AspireVersion>
+    <AspNetCoreVersion>9.0.5</AspNetCoreVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- #region Aspire -->
+    <PackageVersion Include="Aspire.Hosting.AppHost" Version="$(AspireVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="9.5.0" />
+    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="9.2.1" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.12.0" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.12.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.12.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.12.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.12.0" />
+    <PackageVersion Include="Aspire.Hosting.Testing" Version="$(AspireVersion)" />
+    <!--#if (UseRedisCache) -->
+    <PackageVersion Include="Aspire.Hosting.Redis" Version="$(AspireVersion)" />
+    <PackageVersion Include="Aspire.StackExchange.Redis.OutputCaching" Version="$(AspireVersion)" />
+    <!--#endif-->
+    <!-- #endregion Aspire -->
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(AspNetCoreVersion)" />
+
+    <!--#if (IncludeSampleContent) -->
+    <!-- #region EntityFramework -->
+    <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="$(AspNetCoreVersion)" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.5" />
+    <!-- #endregion EntityFramework -->
+
+    <!--#endif-->    
+    <!-- #region Testing -->
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="$(AspNetCoreVersion)" />
+    <!-- #endregion Testing -->
+  </ItemGroup>
+</Project>

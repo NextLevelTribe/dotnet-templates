@@ -1,0 +1,41 @@
+﻿@CleanArchitecture.ApiService_HostAddress = https://localhost:7301
+
+GET {{CleanArchitecture.ApiService_HostAddress}}/weatherforecast
+
+###
+
+//#if (IncludeSampleContent)
+GET {{CleanArchitecture.ApiService_HostAddress}}/todoitems
+
+###
+
+POST {{CleanArchitecture.ApiService_HostAddress}}/todoitems
+Content-Type: application/json
+
+{
+  "name":"walk dog",
+  "isComplete":true
+}
+
+###
+
+@id=1
+DELETE {{CleanArchitecture.ApiService_HostAddress}}/todoitems/{{id}}
+
+###
+
+GET {{CleanArchitecture.ApiService_HostAddress}}/todoitems/{{id}}
+
+###
+
+PUT {{CleanArchitecture.ApiService_HostAddress}}/todoitems/
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name":"walk cat",
+  "isComplete":false
+}
+
+###
+//#endif

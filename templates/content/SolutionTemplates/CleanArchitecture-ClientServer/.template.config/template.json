@@ -1,0 +1,365 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Next Level Tribe",
+  "classifications": [
+    "Web",
+    "Blazor",
+    ".NET Aspire",
+    "Web API",
+    "API",
+    "Clean Architecture"
+  ],
+  "name": "Clean Architecture",
+  "defaultName": "CleanApp",
+  "description": "A complete web app setup: .NET Aspire, front end, back end, tests, and caching.",
+  "groupIdentity": "NextLevelTribe.Web.CleanArchitecture",
+  "precedence": "9000",
+  "identity": "NextLevelTribe.Web.CleanArchitecture.CSharp",
+  "shortName": "nlt-clean-arch",
+  "sourceName": "CleanArchitecture",
+  "preferDefaultName": true,
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "guids": [
+    "10000000-0000-0000-0000-000000000000",
+    "10000000-1000-0000-0000-000000000000",
+    "10000000-2000-0000-0000-000000000000",
+    "10000000-3000-0000-0000-000000000000",
+    "20000000-0000-0000-0000-000000000000",
+    "20000000-1000-0000-0000-000000000000",
+    "30000000-0000-0000-0000-000000000000",
+    "40000000-0000-0000-0000-000000000000",
+    "50000000-0000-0000-0000-000000000000",
+    "60000000-0000-0000-0000-000000000000",
+    "70000000-0000-0000-0000-000000000000",
+    "80000000-0000-0000-0000-000000000000"
+  ],
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        ".template.config/**/*",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json",
+        "**/TestResults/**",
+        "**/.vs/**"
+      ],
+      "copyOnly": [
+        "**/wwwroot/bootstrap/**"
+      ],
+      "modifiers": [
+        {
+          "condition": "(!IncludeSampleContent)",
+          "exclude": [
+            "src/CleanArchitecture.Domain/ToDo/**",
+            "src/CleanArchitecture.ApiService/Features/ToDo/**",
+            "tests/CleanArchitecture.ApiService.FunctionalTests/Features/ToDo/**",
+            "src/CleanArchitecture.Web/Features/ToDo/**"
+          ]
+        }
+      ]
+    },
+    { "source": "../Shared", "target": "./", "copyOnly": ["**/.editorconfig", "**/.gitignore"] }
+  ],
+  "symbols": {
+    "IncludeSampleContent": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "displayName": "Include the To-Do sample feature.",
+      "description": "Configures whether to add the To-Do sample feature to demonstrate basic usage patterns."
+    },
+    "UseRedisCache": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "displayName": "Use Redis for caching (requires a supported container runtime)",
+      "description": "Configures whether to setup the application to use Redis for caching. Requires a supported container runtime to run locally, see https://aka.ms/dotnet/aspire/containers for more details."
+    },
+    "Authors": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "",
+      "replaces": "nltAuthors",
+      "description": "Configures the Authors property in the Directory.Build.props."
+    },
+    "Company": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "",
+      "replaces": "nltCompany",
+      "description": "Configures the Company property in the Directory.Build.props."
+    },
+    "skipRestore": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "If specified, skips the automatic restore of the project on create.",
+      "defaultValue": "false"
+    },
+    "appHostHttpPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTP endpoint in launchSettings.json of the AppHost project."
+    },
+    "appHostHttpPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 15000,
+        "high": 15300
+      }
+    },
+    "appHostHttpPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "appHostHttpPort",
+        "fallbackVariableName": "appHostHttpPortGenerated"
+      },
+      "replaces": "15000"
+    },
+    "appHostHttpsPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTPS endpoint in launchSettings.json of the AppHost project. This option is only applicable when the parameter no-https is not used."
+    },
+    "appHostHttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 17000,
+        "high": 17300
+      }
+    },
+    "appHostHttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "appHostHttpsPort",
+        "fallbackVariableName": "appHostHttpsPortGenerated"
+      },
+      "replaces": "17000"
+    },
+    "appHostOtlpHttpPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the OTLP HTTP endpoint in launchSettings.json of the AppHost project."
+    },
+    "appHostOtlpHttpPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 19000,
+        "high": 19300
+      }
+    },
+    "appHostOtlpHttpPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "appHostOtlpHttpPort",
+        "fallbackVariableName": "appHostOtlpHttpPortGenerated"
+      },
+      "replaces": "19000"
+    },
+    "appHostOtlpHttpsPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the OTLP HTTPS endpoint in launchSettings.json of the AppHost project."
+    },
+    "appHostOtlpHttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 21000,
+        "high": 21300
+      }
+    },
+    "appHostOtlpHttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "appHostOtlpHttpsPort",
+        "fallbackVariableName": "appHostOtlpHttpsPortGenerated"
+      },
+      "replaces": "21000"
+    },
+    "appHostResourceHttpPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the resource service HTTP endpoint in launchSettings.json of the AppHost project."
+    },
+    "appHostResourceHttpPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 20000,
+        "high": 20300
+      }
+    },
+    "appHostResourceHttpPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "appHostResourceHttpPort",
+        "fallbackVariableName": "appHostResourceHttpPortGenerated"
+      },
+      "replaces": "20000"
+    },
+    "appHostResourceHttpsPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the resource service HTTPS endpoint in launchSettings.json of the AppHost project."
+    },
+    "appHostResourceHttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 22000,
+        "high": 22300
+      }
+    },
+    "appHostResourceHttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "appHostResourceHttpsPort",
+        "fallbackVariableName": "appHostResourceHttpsPortGenerated"
+      },
+      "replaces": "22000"
+    },
+    "webHttpPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTP endpoint in launchSettings.json of the Web project."
+    },
+    "webHttpPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 5000,
+        "high": 5300
+      }
+    },
+    "webHttpPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "webHttpPort",
+        "fallbackVariableName": "webHttpPortGenerated"
+      },
+      "replaces": "5000"
+    },
+    "webHttpsPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTPS endpoint in launchSettings.json of the Web project. This option is only applicable when the parameter no-https is not used."
+    },
+    "webHttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 7000,
+        "high": 7300
+      }
+    },
+    "webHttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "webHttpsPort",
+        "fallbackVariableName": "webHttpsPortGenerated"
+      },
+      "replaces": "7000"
+    },
+    "apiServiceHttpPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTP endpoint in launchSettings.json of the ApiService project."
+    },
+    "apiServiceHttpPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 5301,
+        "high": 5600
+      }
+    },
+    "apiServiceHttpPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "apiServiceHttpPort",
+        "fallbackVariableName": "apiServiceHttpPortGenerated"
+      },
+      "replaces": "5301"
+    },
+    "apiServiceHttpsPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTPS endpoint in launchSettings.json of the ApiService project. This option is only applicable when the parameter no-https is not used."
+    },
+    "apiServiceHttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 7301,
+        "high": 7600
+      }
+    },
+    "apiServiceHttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "apiServiceHttpsPort",
+        "fallbackVariableName": "apiServiceHttpsPortGenerated"
+      },
+      "replaces": "7301"
+    }
+  },
+  "primaryOutputs": [
+    {
+      "path": "CleanArchitecture.sln",
+      "condition": "(hostIdentifier == \"dotnetcli\" || hostIdentifier == \"dotnetcli-preview\")"
+    },
+    {
+      "path": "src\\CleanArchitecture.AppHost\\CleanArchitecture.AppHost.csproj"
+    },
+    {
+      "path": "src\\CleanArchitecture.ServiceDefaults\\CleanArchitecture.ServiceDefaults.csproj"
+    },
+    {
+      "path": "src\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj"
+    },
+    {
+      "path": "src\\CleanArchitecture.ApiService\\CleanArchitecture.ApiService.csproj"
+    },
+    {
+      "path": "src\\CleanArchitecture.Web\\CleanArchitecture.Web.csproj"
+    },
+    {
+      "path": "tests\\CleanArchitecture.AppHost.IntegrationTests\\CleanArchitecture.AppHost.IntegrationTests.csproj"
+    }
+  ],
+  "postActions": [
+    {
+      "id": "restore",
+      "condition": "(!skipRestore)",
+      "description": "Restore NuGet packages required by this project.",
+      "manualInstructions": [
+        {
+          "text": "Run 'dotnet restore'"
+        }
+      ],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    }
+  ]
+}

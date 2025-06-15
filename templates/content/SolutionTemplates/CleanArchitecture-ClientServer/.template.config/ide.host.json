@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/ide.host",
+  "order": 610,
+  "icon": "ide/icon.png",
+  "displayOverviewPage": "0",
+  "unsupportedHosts": [
+    {
+      "id": "vs",
+      "version": "(,17.9)"
+    }
+  ],
+  "symbolInfo": [
+    {
+      "id": "IncludeSampleContent",
+      "isVisible": true,
+      "persistenceScope": "shared",
+      "persistenceScopeName": "NextLevelTribe"
+    },
+    {
+      "id": "UseRedisCache",
+      "isVisible": true,
+      "persistenceScope": "templateGroup"
+    }
+  ]
+}

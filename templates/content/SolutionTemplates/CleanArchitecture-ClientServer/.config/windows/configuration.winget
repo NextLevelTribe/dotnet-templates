@@ -1,0 +1,93 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+
+##########################################################################################################
+# This configuration will install the tools necessary to start developing on this project on Windows.    #
+#                                                                                                        #
+# This will install:                                                                                     #
+#     * Git                                                                                              #
+#     * .NET SDK                                                                                         #
+#     * Visual Studio Community and the following Workloads and Components                               #
+#       * ASP.NET and web development                                                                    #
+#       * .NET Aspire SDK                                                                                #
+#     * Windows Subsystem for Linux (WSL)                                                                #
+#     * Docker Desktop                                                                                   #
+#                                                                                                        #
+##########################################################################################################
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: '10.0.22000'
+  resources:
+  ################
+  # Install apps #
+  ################
+    # Section: Git
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Git.Git
+      directives:
+        description: Install Git.Git # Although the user probably already has git installed, it's possible that they don't.
+        securityContext: elevated
+        allowPrerelease: true
+      settings:
+        id: Git.Git
+        source: winget
+    # Section: .NET SDK
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.DotNet.SDK
+      directives:
+        description: Install Microsoft.DotNet.SDK
+        securityContext: elevated
+        allowPrerelease: true
+      settings:
+        id: Microsoft.DotNet.SDK.9
+        source: winget
+    # Section: Visual Studio
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.VisualStudio.2022.Community
+      directives:
+        description: Install Microsoft.VisualStudio.2022.Community
+        securityContext: elevated
+      settings:
+        id: Microsoft.VisualStudio.2022.Community
+        source: winget
+    # Section: Visual Studio - ASP.NET, Aspire
+    - resource: Microsoft.VisualStudio.DSC/VSComponents
+      id: VisualStudio.Components
+      dependsOn:
+        - Microsoft.VisualStudio.2022.Community
+      directives:
+        description: Install Visual Studio Workloads
+        allowPrerelease: true
+        securityContext: elevated
+      settings:
+        productId: Microsoft.VisualStudio.Product.Community
+        channelId: VisualStudio.17.Release
+        components:
+          - Microsoft.VisualStudio.Workload.NetWeb
+          - aspire
+        includeRecommended: false
+    # Section: WSL
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.WSL
+      directives:
+        description: Install Microsoft.WSL
+        securityContext: elevated
+        allowPrerelease: true
+      settings:
+        id: Microsoft.WSL
+        source: winget
+    # Section: Docker Desktop
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Docker.DockerDesktop
+      directives:
+        description: Install Docker.DockerDesktop
+        securityContext: elevated
+        allowPrerelease: true
+      settings:
+        id: Docker.DockerDesktop
+        source: winget

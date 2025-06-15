@@ -4,14 +4,13 @@
 # This configuration will install the tools necessary to start developing on this project on Windows.    #
 #                                                                                                        #
 # This will:                                                                                             #
-#     * Install Git                                                                                      #
-#     * Install PowerShell                                                                               #
-#     * Install .NET SDK                                                                                 #
-#     * Install Visual Studio Code and the following extensions                                          #
-#         * EditorConfig                                                                                 #
-#         * PowerShell                                                                                   #
-#         * C# Dev Kit                                                                                   #
-#     * Install Managed Desktop Workload to Visual Studio Community 2022                                 #
+#     * Git                                                                                              #
+#     * PowerShell                                                                                       #
+#     * .NET SDK                                                                                         #
+#     * Visual Studio Code and the following extensions                                                  #
+#       * EditorConfig                                                                                   #
+#       * PowerShell                                                                                     #
+#       * C# Dev Kit                                                                                     #
 #                                                                                                        #
 ##########################################################################################################
 properties:
@@ -66,6 +65,7 @@ properties:
       settings:
         id: Microsoft.VisualStudioCode
         source: winget
+    # Section: VSCode - EditorConfig
     - resource: Microsoft.VSCode.Dsc/VSCodeExtension
       id: VSCode.EditorConfig
       dependsOn:
@@ -76,6 +76,7 @@ properties:
       settings:
         Name: editorconfig.editorconfig
         Exist: true
+    # Section: VSCode - PowerShell
     - resource: Microsoft.VSCode.Dsc/VSCodeExtension
       id: VSCode.PowerShell
       dependsOn:
@@ -86,6 +87,7 @@ properties:
       settings:
         Name: ms-vscode.powershell
         Exist: true
+    # Section: VSCode - CSharpDevKit
     - resource: Microsoft.VSCode.Dsc/VSCodeExtension
       id: VSCode.CSharpDevKit
       dependsOn:

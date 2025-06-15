@@ -1,0 +1,31 @@
+﻿<!-- For more info on customizing your build go to https://aka.ms/dotnet/msbuild/customize -->
+<Project>
+  <PropertyGroup>
+
+    <!-- Package properties. See: https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#package-properties -->
+    <Authors>nltAuthors</Authors>
+    <Company>nltCompany</Company>
+
+    <!-- Framework properties. See: https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#targetframework -->
+    <TargetFramework>net9.0</TargetFramework>
+
+    <!-- Build-related properties. See: https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#build-related-properties -->
+    <OptimizeImplicitlyTriggeredBuild>true</OptimizeImplicitlyTriggeredBuild>
+
+    <!-- Generated file properties. See: https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#generated-file-properties -->
+    <ImplicitUsings>disable</ImplicitUsings>
+
+    <!-- Code analysis properties. See: https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#code-analysis-properties -->
+    <AnalysisMode>Recommanded</AnalysisMode>
+    <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
+
+    <!-- C# Compiler Options for language feature rules. See: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/language -->
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+
+    <!-- C# Compiler Options to report errors and warnings. See: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/errors-warnings -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+  </PropertyGroup>
+</Project>
