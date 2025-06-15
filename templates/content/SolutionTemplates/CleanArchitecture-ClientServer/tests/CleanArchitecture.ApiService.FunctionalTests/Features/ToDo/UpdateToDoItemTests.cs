@@ -34,7 +34,7 @@ public sealed class UpdateToDoItemTests
         await using ToDoTestApplication application = new(nameof(Put_UpdateToDoItem_ReturnsNoContent));
         using HttpClient client = application.CreateClient();
 
-        ApiService.Features.ToDo.CreateToDoItem.Adapters.ResponseVM addedToDoItem = await CreateTodoItem();
+        ApiService.Features.ToDo.CreateToDoItem.Adapters.ResponseVM addedToDoItem = await application.CreateTodoItem();
         Assert.IsFalse(addedToDoItem.IsComplete);
 
         RequestVM updatedToDoItem = new(addedToDoItem.Id, addedToDoItem.Name, true);
