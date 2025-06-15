@@ -41,7 +41,7 @@
       },
       "IncludeSampleContent": {
         "longName": "include-sample-content",
-        "shortName": "sample"
+        "shortName": "isc"
     }
   },
   "usageExamples": [

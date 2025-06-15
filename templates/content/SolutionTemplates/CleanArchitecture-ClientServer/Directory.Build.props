@@ -3,7 +3,7 @@
   <PropertyGroup>
 
     <!-- Package properties. See: https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#package-properties -->
-    <Authors>nltAuthor</Authors>
+    <Authors>nltAuthors</Authors>
     <Company>nltCompany</Company>
 
     <!-- Framework properties. See: https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#targetframework -->

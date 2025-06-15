@@ -5,13 +5,15 @@
 📁
 ├─📁 .config                             # Desired State Configuration (DSC) scripts to setup the development environment.
 ├─📁 src                                 # Source code of the application
+│ ├─📁 CleanArchitecture.ApiService      # ASP.NET Core Web API project that serves as the backend. Contains the Presentation (API), Infrastucture, Adapter, and the Application layers.
 │ ├─📁 CleanArchitecture.AppHost         # .NET Aspire orchestrator project designed to connect and configure the different projects and services of your app.
+│ ├─📁 CleanArchitecture.Domain          # Domain layer.
 │ ├─📁 CleanArchitecture.ServiceDefaults # .NET Aspire shared project to manage configurations that are reused across the projects in your solution related to resilience, service discovery, and telemetry.
-│ ├─📁 CleanArchitecture.Weather         # Weather microservice.
-│ └─📁 CleanArchitecture.Web             # Presentation layer: Blazor web app.
-├─📁 tests                               # Unit and integration tests
+│ └─📁 CleanArchitecture.Web             # Blazor Web App project that serves as the Client app.
+├─📁 tests
+│ ├─📁 CleanArchitecture.ApiService.FunctionalTests
 │ └─📁 CleanArchitecture.AppHost.IntegrationTests
-├─🗎 .editorconfig            # Codeing styles.
+├─🗎 .editorconfig            # Coding styles.
 ├─🗎 .gitignore
 ├─🗎 Directory.Build.props    # Solution level project settings.
 ├─🗎 Directory.Packages.props # Solution level Central Package Management.
@@ -37,10 +39,10 @@ cd .\.config\windows\
 ```
 
 ## Known Issues
-- In case of the test projects. The usual NuGet update and Visual Studio UI for managing NuGet packages does not work as expected with [MSTest.Sdk](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-mstest-sdk). See this issue for more details: [NuGet#13127](https://github.com/NuGet/Home/issues/13127). Dependabot will handle updating the version in the global.json file.
+- The usual NuGet update and Visual Studio UI for managing NuGet packages does not work as expected with [MSTest.Sdk](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-mstest-sdk). See this issue for more details: [NuGet#13127](https://github.com/NuGet/Home/issues/13127). Dependabot will handle updating the version in the global.json file.
 
 ## Build
-Run `dotnet build -tl` to build the solution.
+Run `dotnet build` to build the solution.
 
 ## Resources
 

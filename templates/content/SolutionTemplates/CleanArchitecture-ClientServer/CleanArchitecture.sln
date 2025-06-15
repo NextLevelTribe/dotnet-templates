@@ -26,7 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.ApiService.FunctionalTests", "tests\CleanArchitecture.ApiService.FunctionalTests\CleanArchitecture.ApiService.FunctionalTests.csproj", "{DFB7742A-77F0-41A4-A8DC-09CAD0B5E7AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.ApiService.FunctionalTests", "tests\CleanArchitecture.ApiService.FunctionalTests\CleanArchitecture.ApiService.FunctionalTests.csproj", "{80000000-0000-0000-0000-000000000000}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,10 +58,10 @@ Global
 		{70000000-0000-0000-0000-000000000000}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70000000-0000-0000-0000-000000000000}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70000000-0000-0000-0000-000000000000}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DFB7742A-77F0-41A4-A8DC-09CAD0B5E7AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DFB7742A-77F0-41A4-A8DC-09CAD0B5E7AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DFB7742A-77F0-41A4-A8DC-09CAD0B5E7AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DFB7742A-77F0-41A4-A8DC-09CAD0B5E7AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80000000-0000-0000-0000-000000000000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80000000-0000-0000-0000-000000000000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80000000-0000-0000-0000-000000000000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80000000-0000-0000-0000-000000000000}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,7 +73,7 @@ Global
 		{50000000-0000-0000-0000-000000000000} = {10000000-1000-0000-0000-000000000000}
 		{60000000-0000-0000-0000-000000000000} = {10000000-2000-0000-0000-000000000000}
 		{70000000-0000-0000-0000-000000000000} = {10000000-1000-0000-0000-000000000000}
-		{DFB7742A-77F0-41A4-A8DC-09CAD0B5E7AD} = {10000000-2000-0000-0000-000000000000}
+		{80000000-0000-0000-0000-000000000000} = {10000000-2000-0000-0000-000000000000}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10000000-0000-0000-0000-000000000000}

@@ -4,7 +4,7 @@ GET {{CleanArchitecture.ApiService_HostAddress}}/weatherforecast
 
 ###
 
-#if (IncludeSampleContent)
+//#if (IncludeSampleContent)
 GET {{CleanArchitecture.ApiService_HostAddress}}/todoitems
 
 ###
@@ -38,4 +38,4 @@ Content-Type: application/json
 }
 
 ###
-#endif
+//#endif

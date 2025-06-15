@@ -34,7 +34,8 @@
     "40000000-0000-0000-0000-000000000000",
     "50000000-0000-0000-0000-000000000000",
     "60000000-0000-0000-0000-000000000000",
-    "70000000-0000-0000-0000-000000000000"
+    "70000000-0000-0000-0000-000000000000",
+    "80000000-0000-0000-0000-000000000000"
   ],
   "sources": [
     {
@@ -81,6 +82,20 @@
       "defaultValue": "false",
       "displayName": "Use Redis for caching (requires a supported container runtime)",
       "description": "Configures whether to setup the application to use Redis for caching. Requires a supported container runtime to run locally, see https://aka.ms/dotnet/aspire/containers for more details."
+    },
+    "Authors": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "",
+      "replaces": "nltAuthors",
+      "description": "Configures the Authors property in the Directory.Build.props."
+    },
+    "Company": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "",
+      "replaces": "nltCompany",
+      "description": "Configures the Company property in the Directory.Build.props."
     },
     "skipRestore": {
       "type": "parameter",

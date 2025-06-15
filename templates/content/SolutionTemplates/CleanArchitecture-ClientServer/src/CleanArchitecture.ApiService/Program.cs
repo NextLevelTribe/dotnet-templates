@@ -36,7 +36,9 @@ public class Program
         if (app.Environment.IsDevelopment())
         {
             _ = app.MapOpenApi();
+            #if (IncludeSampleContent)
             _ = app.UseMigrationsEndPoint(); // It checks if the database has any pending migrations and will apply them if needed.
+            #endif
         }
 
         _ = app.MapFeaturesEndpoints();
