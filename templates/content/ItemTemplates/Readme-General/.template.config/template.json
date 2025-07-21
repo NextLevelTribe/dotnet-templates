@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Next Level Tribe",
+  "description": "Creates a README markdown file for the project.",
+  "classifications": [ "Common" ],
+  "groupIdentity": "NextLevelTribe.Readme",
+  "precedence": "10",
+  "identity": "NextLevelTribe.Readme.General",
+  "name": "README",
+  "shortName": "nlt-readme",
+  "primaryOutputs": [
+    {
+      "path": "README.md"
+    }
+  ],
+  "tags": {
+    "type": "item"
+  }
+}
