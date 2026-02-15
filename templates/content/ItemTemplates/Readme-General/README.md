@@ -11,10 +11,10 @@
 │ └─📁workflows                   # CI/CD pipeline definitions
 ├─📁deploy                        # Deployment configuration and IaC
 ├─📁docs                          # Project-related documentation
-│ ├─📁01-business                 # Problem statement, Business requirements
-│ ├─📁02-product                  # Functional & Non-Functional Requirements
-│ ├─📁03-solution                 # Solution design and architecture
-│ ├─📁04-deployment               #
+│ ├─📁01-vision
+│ ├─📁02-requirements
+│ ├─📁03-design                   # Architecture documentation, design decisions, and patterns.
+│ ├─📁04-deployment
 │ └─📁05-operations               # Runbooks, monitoring, and maintenance documentation
 ├─📁samples                       # Lightweight apps for usage demonstration.
 ├─📁scripts                       # Reusable automation or helper scripts
